@@ -1,6 +1,5 @@
 import sys
 debugy=True
-
 def debug(x):
     if debugy==True:
         print(x)
@@ -13,6 +12,7 @@ def lstpr(lst):
     toprint=step2.replace(',',' ')
     print(toprint)
 variables ={}
+
 def check(args):
     a0=args[0]
     if isinstance(args, list):
@@ -27,11 +27,22 @@ def check(args):
         except IndexError:
             print("INDEX ERROR")
     #check for var declare cmd
-    elif args[0]=="var":
+    elif args[0]=="int":
         try:
-            variables[args[1]]=args[3]
+            a3=args[3]
+            if a3[0]!="$":
+                variables[args[1]]=args[3]
+            else:
+                a3=str(args[3])
+                a3=a3.replace('$','')
+                variables[args[1]]=variables[a3]
         except IndexError:
             print("INDEX ERROR")
+    elif args[0]=="str":
+        try:
+            variables[args[1]]=str(args[3])
+        except IndexError:
+            print("INDEX ERROR")       
     #check for exit cmd
     elif args[0]=="exit":
         ret(0)
