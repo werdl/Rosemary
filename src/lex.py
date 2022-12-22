@@ -38,9 +38,16 @@ def check(args):
                 variables[args[1]]=variables[a3]
         except IndexError:
             print("INDEX ERROR")
+
     elif args[0]=="str":
         try:
-            variables[args[1]]=str(args[3])
+            a3=args[3]
+            if a3[0]!="$":
+                variables[args[1]]=str(args[3])
+            else:
+                a3=str(args[3])
+                a3=a3.replace('$','')
+                variables[args[1]]=variables[a3]
         except IndexError:
             print("INDEX ERROR")       
     #check for exit cmd
