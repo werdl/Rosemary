@@ -1,24 +1,25 @@
 SYNTAX
 
-int x = 1
-$x
+>int x = 1
+>$x
 #returns 1
 
-str y = 'hi'
-$y
+>str y = 'hi'
+>$y
 #returns hi
 
-float z = 0.1
-$z
+>float z = 0.1
+>$z
 #returns 0.1
 
 
-
-
-
-
-print x
+>print x
 #returns x
 
-print $x
+>print $x
 #returns 1
+
+>if ($x==1) {
+print $x
+}
+#if $x is 1, returns $x
