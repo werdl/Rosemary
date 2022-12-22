@@ -65,11 +65,11 @@ def check(args):
             if args[1]=="+":
                 print(round((a0+a2),5))
             elif args[1]=="-":
-                print(round((a0+a2),5))
+                print(round((a0-a2),5))
             elif args[1]=="*":
-                print(round((a0+a2),5))
+                print(round((a0*a2),5))
             elif args[1]=="/":
-                print(round((a0+a2),5))
+                print(round((a0/a2),5))
 
         args=[]
     except IndexError:
