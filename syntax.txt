@@ -1,0 +1,24 @@
+SYNTAX
+
+int x = 1
+$x
+#returns 1
+
+str y = 'hi'
+$y
+#returns hi
+
+float z = 0.1
+$z
+#returns 0.1
+
+
+
+
+
+
+print x
+#returns x
+
+print $x
+#returns 1
