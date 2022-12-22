@@ -21,47 +21,59 @@ def check(args):
         sys.exit()
     argsd=list(args)
     #check for print cmd
-    if args[0]=="print":
-        try:
-            print(args[1])
-        except IndexError:
-            print("INDEX ERROR")
-    #check for var declare cmd
-    elif args[0]=="int":
-        try:
-            a3=args[3]
-            if a3[0]!="$":
-                variables[args[1]]=args[3]
-            else:
-                a3=str(args[3])
-                a3=a3.replace('$','')
-                variables[args[1]]=variables[a3]
-        except IndexError:
-            print("INDEX ERROR")
+    try:
+        if args[0]=="print":
+            try:
+                print(args[1])
+            except IndexError:
+                print("INDEX ERROR")
+        #check for var declare cmd
+        elif args[0]=="int":
+            try:
+                a3=args[3]
+                if a3[0]!="$":
+                    variables[args[1]]=args[3]
+                else:
+                    a3=str(args[3])
+                    a3=a3.replace('$','')
+                    variables[args[1]]=variables[a3]
+            except IndexError:
+                print("INDEX ERROR")
 
-    elif args[0]=="str":
-        try:
-            a3=args[3]
-            if a3[0]!="$":
-                variables[args[1]]=str(args[3])
-            else:
-                a3=str(args[3])
-                a3=a3.replace('$','')
-                variables[args[1]]=variables[a3]
-        except IndexError:
-            print("INDEX ERROR")       
-    #check for exit cmd
-    elif args[0]=="exit":
-        ret(0)
+        elif args[0]=="str":
+            try:
+                a3=args[3]
+                if a3[0]!="$":
+                    variables[args[1]]=str(args[3])
+                else:
+                    a3=str(args[3])
+                    a3=a3.replace('$','')
+                    variables[args[1]]=variables[a3]
+            except IndexError:
+                print("INDEX ERROR")       
+        #check for exit cmd
+        elif args[0]=="exit":
+            ret(0)
+        elif a0[0]=="$":
+            try:
+                print(variables[a0[1:]])
+            except KeyError:
+                print(a0[1:]+' is not defined!')
+        elif args[1]=="+" or args[1]=="-" or args[1]=="*" or args[1]=="/":
+            a0=float(args[0])
+            a2=float(args[2])
+            if args[1]=="+":
+                print(round((a0+a2),5))
+            elif args[1]=="-":
+                print(round((a0+a2),5))
+            elif args[1]=="*":
+                print(round((a0+a2),5))
+            elif args[1]=="/":
+                print(round((a0+a2),5))
 
-
-    elif a0[0]=="$":
-        try:
-            print(variables[a0[1:]])
-        except KeyError:
-            print(a0[1:]+' is not defined!')
-
-    args=[]
+        args=[]
+    except IndexError:
+        print('your syntax is bad')
 def ret(y):
     if y==0:
         sys.exit()
