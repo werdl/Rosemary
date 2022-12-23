@@ -47,14 +47,25 @@ def check(argstr):
             try:
                 a3=args[3]
                 if a3[0]!="$":
-                    variables[args[1]]=args[3]
+                    variables[args[1]]=int(args[3])
                 else:
                     a3=str(args[3])
                     a3=a3.replace('$','')
-                    variables[args[1]]=variables[a3]
+                    variables[args[1]]=int(variables[a3])
             except IndexError:
                 print("INDEX ERROR")
-
+        elif args[0]=="float":
+            try:
+                a3=args[3]
+                if a3[0]!="$":
+                    variables[args[1]]=float(args[3])
+                else:
+                    a3=str(args[3])
+                    a3=a3.replace('$','')
+                    variables[args[1]]=float(variables[a3])
+            except IndexError:
+                print("INDEX ERROR")
+        
         elif args[0]=="str":
             try:
                 a3=args[3]
@@ -69,7 +80,7 @@ def check(argstr):
         #check for exit cmd
         elif args[0]=="exit":
             ret(0)
-        elif a0[0]=="$":
+        elif a0[0]=="$" and len(args)!=3:
             try:
                 print(variables[a0[1:]])
             except KeyError:
@@ -77,35 +88,26 @@ def check(argstr):
         elif a0[0]=="#":
             pass
         elif args[1]=="+" or args[1]=="-" or args[1]=="*" or args[1]=="/":
-            a0=args[0]
-            a2=args[2]
-            if a0[0]=='$':
-                try:
-                    a0=str(variables[a2[1:]])
-                    
-                except:
-                    print("Variable does not exist or is wrong type")
-            else:
+            a0=str(args[0])
+            a2=str(args[2])
+            if a0[0]!='$':
                 a0=float(args[0])
-
-            if a2[0]=='$':
-                try:
-                    a2=str(variables[a2[1:]])
-                except:
-                    print("Variable does not exist or is wrong type")
-            else:
+            elif a0[0]=='$':
+                a0=variables[a0[1:]]
+            if a2[0]!='$':
                 a2=float(args[2])
-            a0=float(a0)
-            a2=float(a2)
+            elif a2[2]=='$':
+                a2=variables[a2[1:]]
             if args[1]=="+":
-                print(round(a0+a2),5)
+                print(round((a0+a2),5))
             elif args[1]=="-":
-                print(round(a0-a2),5)
+                print(round((a0-a2),5))
             elif args[1]=="*":
-                print(round(a0*a2),5)
+                print(round((a0*a2),5))
             elif args[1]=="/":
-                print(round(a0/a2),5)
-        
+                print(round((a0/a2),5))
+            else:
+                print("hmm")
         else:
             print("Your command wasn't recognised.")
         args=[]
