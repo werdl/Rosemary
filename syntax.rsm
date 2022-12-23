@@ -6,6 +6,10 @@ str y = hi;
 $y;
 #hi;
 
+float z = 1;
+$z;
+#1.0;
+
 print x;
 #x;
 
