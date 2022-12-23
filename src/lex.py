@@ -88,26 +88,32 @@ def check(argstr):
         elif a0[0]=="#":
             pass
         elif args[1]=="+" or args[1]=="-" or args[1]=="*" or args[1]=="/":
-            a0=str(args[0])
-            a2=str(args[2])
-            if a0[0]!='$':
-                a0=float(args[0])
-            elif a0[0]=='$':
-                a0=float(variables[a0[1:]])
-            if a2[0]!='$':
-                a2=float(args[2])
-            elif a2[2]=='$':
-                a2=float(variables[a2[1:]])
-            if args[1]=="+":
-                print(round((a0+a2),5))
-            elif args[1]=="-":
-                print(round((a0-a2),5))
-            elif args[1]=="*":
-                print(round((a0*a2),5))
-            elif args[1]=="/":
-                print(round((a0/a2),5))
-            else:
-                print("hmm")
+            try:
+                a0=str(args[0])
+                a2=str(args[2])
+                if a0[0]!='$':
+                    a0=float(args[0])
+                elif a0[0]=='$':
+                    a0=float(variables[a0[1:]])
+                if a2[0]!='$':
+                    a2=float(args[2])
+                elif a2[2]=='$':
+                    a2=float(variables[a2[1:]])
+                try:
+                    if args[1]=="+":
+                        print(round((a0+a2),5))
+                    elif args[1]=="-":
+                        print(round((a0-a2),5))
+                    elif args[1]=="*":
+                        print(round((a0*a2),5))
+                    elif args[1]=="/":
+                        print(round((a0/a2),5))
+                    else:
+                        print("hmm")
+                except TypeError:
+                    print("no string stuff")
+            except:
+                pass
         else:
             print("Your command wasn't recognised.")
         args=[]
