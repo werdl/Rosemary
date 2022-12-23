@@ -1,19 +1,19 @@
 int x = 1;
-$x;
+print $x;
 #1;
 
 str y = hi;
-$y;
+print $y;
 #hi;
 
 float z = 1;
-$z;
+print $z;
 #1.0;
 
 print x;
 #x;
 
-$x;
+print $x;
 #1;
 
 
