@@ -3,8 +3,8 @@
 - Basically: strongly typed, mix of python perl and php syntax
 - It uses {} rather than indentation, as I think it allows for more options.
 - Check out syntax.txt which I guess is also the docs?
-- Extension is .rsm by default but to be honest it doesn't really matter.
-- .rsm - Rosemary file
+- Extension is .rsmy by default but to be honest it doesn't really matter.
+- .rsmy - Rosemary file
 - Error checking is pretty good right now, not
 - I'll try and fix that.
 ## Plans for the project
