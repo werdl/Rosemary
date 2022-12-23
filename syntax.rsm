@@ -1,0 +1,15 @@
+int x = 1;
+$x;
+#1;
+
+str y = hi;
+$y;
+#hi;
+
+print x;
+#x;
+
+$x;
+#1;
+
+

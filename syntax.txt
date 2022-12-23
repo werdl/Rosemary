@@ -1,3 +1,4 @@
+If you want to see this code running, try executing >>£ syntax.rsm >> in the command line
 SYNTAX
 
 >int x = 1

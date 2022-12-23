@@ -13,8 +13,15 @@ def lstpr(lst):
     print(toprint)
 variables ={}
 
-def check(args):
+def check(argstr):
+    args=argstr.split(' ')
     a0=args[0]
+
+    try:
+        a1=args[1]
+        a2=args[2]
+    except:
+        pass
     if isinstance(args, list):
         pass
     else:
@@ -26,7 +33,13 @@ def check(args):
     try:
         if args[0]=="print":
             try:
-                print(args[1])
+                if a1[0]!='$':
+                    print(args[1])
+                else:
+                    try:
+                        print(variables[a0[1:]])
+                    except KeyError:
+                        print(a1[1:]+' is not defined!')
             except IndexError:
                 print("INDEX ERROR")
         #check for var declare cmd
@@ -64,16 +77,35 @@ def check(args):
         elif a0[0]=="#":
             pass
         elif args[1]=="+" or args[1]=="-" or args[1]=="*" or args[1]=="/":
-            a0=float(args[0])
-            a2=float(args[2])
+            a0=args[0]
+            a2=args[2]
+            if a0[0]=='$':
+                try:
+                    a0=str(variables[a2[1:]])
+                    
+                except:
+                    print("Variable does not exist or is wrong type")
+            else:
+                a0=float(args[0])
+
+            if a2[0]=='$':
+                try:
+                    a2=str(variables[a2[1:]])
+                except:
+                    print("Variable does not exist or is wrong type")
+            else:
+                a2=float(args[2])
+            a0=float(a0)
+            a2=float(a2)
             if args[1]=="+":
-                print(round((a0+a2),5))
+                print(round(a0+a2),5)
             elif args[1]=="-":
-                print(round((a0-a2),5))
+                print(round(a0-a2),5)
             elif args[1]=="*":
-                print(round((a0*a2),5))
+                print(round(a0*a2),5)
             elif args[1]=="/":
-                print(round((a0/a2),5))
+                print(round(a0/a2),5)
+        
         else:
             print("Your command wasn't recognised.")
         args=[]
