@@ -34,5 +34,5 @@ print $x is one
 
 SHELL ONLY SYNTAX
 
->£ src\test.rsm
-runs test.rsm
+>£ src\test.rsmy
+runs test.rsmy
