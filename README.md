@@ -7,6 +7,9 @@
 - .rsmy - Rosemary file
 - Error checking is pretty good right now, not
 - I'll try and fix that.
+## Why use Rosemary?
+- idk
+- general purpose?
 ## Plans for the project
 - Change from Python to C++ for performance
 - I'll write my own interpreter, I won't use
