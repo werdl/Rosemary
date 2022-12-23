@@ -1,6 +1,6 @@
 int x = 1;
 $x;
 int y = $x;
-$y;
+$y
 #comment;
 print done;

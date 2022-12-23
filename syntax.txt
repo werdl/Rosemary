@@ -30,3 +30,8 @@ print hi
 >while ($x == 1) {
 print $x is one
 }
+
+SHELL ONLY SYNTAX
+
+>£ src\test.rsm
+runs test.rsm
