@@ -21,6 +21,8 @@ def check(args):
         sys.exit()
     argsd=list(args)
     #check for print cmd
+    if args==['']:
+        sys.exit()
     try:
         if args[0]=="print":
             try:
@@ -59,6 +61,8 @@ def check(args):
                 print(variables[a0[1:]])
             except KeyError:
                 print(a0[1:]+' is not defined!')
+        elif a0[0]=="#":
+            pass
         elif args[1]=="+" or args[1]=="-" or args[1]=="*" or args[1]=="/":
             a0=float(args[0])
             a2=float(args[2])
@@ -70,10 +74,11 @@ def check(args):
                 print(round((a0*a2),5))
             elif args[1]=="/":
                 print(round((a0/a2),5))
-
+        else:
+            print("Your command wasn't recognised.")
         args=[]
     except IndexError:
-        print('your syntax is bad')
+        print('Your syntax is bad - make sure there are spaces between operators.')
 def ret(y):
     if y==0:
         sys.exit()
