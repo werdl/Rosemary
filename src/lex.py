@@ -93,11 +93,11 @@ def check(argstr):
             if a0[0]!='$':
                 a0=float(args[0])
             elif a0[0]=='$':
-                a0=variables[a0[1:]]
+                a0=float(variables[a0[1:]])
             if a2[0]!='$':
                 a2=float(args[2])
             elif a2[2]=='$':
-                a2=variables[a2[1:]]
+                a2=float(variables[a2[1:]])
             if args[1]=="+":
                 print(round((a0+a2),5))
             elif args[1]=="-":
