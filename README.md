@@ -15,8 +15,8 @@
 - I'll write my own interpreter, I won't use
 Bison or Flex or whatever
 - Interpreted for the time being, not compiled cos I don't know enough assembly
-- Eventually the shell will be downloadable as 
-a .exe file I hope
+- Latest executable is at .\rosemary.exe
+- You can compile for MacOS if you like
 - I will add file execute abilities some time soon
 - Also strings don't need speech marks, 
 Rosemary does that for you
