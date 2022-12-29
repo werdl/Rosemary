@@ -1,4 +1,4 @@
-If you want to see this code running, try executing >>£ syntax.rsm >> in the command line
+If you want to see this code running, try executing >>£ syntax.rsmy >> in the command line
 SYNTAX
 
 >int x = 1
@@ -34,5 +34,5 @@ print $x is one
 
 SHELL ONLY SYNTAX
 
->£ src\test.rsm
-runs test.rsm
+>£ src\test.rsmy
+runs test.rsmy
