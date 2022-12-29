@@ -4,31 +4,20 @@ using namespace std;
 
 int main()
 {
-	string test = "hello;world";
-	int testlength=test.length();
+	string given_str = "hello;world";
 	string token0;
 	string token1;
-	string token2;
-	string token3;
-	int x = 0;
-	string lf = ";";
-	while (test[x]!=lf) {
-		if (x=0) {
-			string token0=token0+test[x];
-		}
-		if (x=1) {
-			string token1=token1+test[x];
-		}
-		if (x=2) {
-			string token2=token2+test[x];
-		}
-		if (x=3) {
-			string token3=token3+test[x];
-		}
-		x++;
+	string delim=";";
+	size_t pos = 0;
+	string tokens[4];
+	while (( pos = given_str.find (delim)) != std::string::npos)
+	{
+	token1 = given_str.substr(0, pos); // store the substring 
+	cout << token1 << endl;
+	tokens[0]=token1;
+	given_str.erase(0, pos + delim.length());  /* erase() function store the current positon and move to next token. */ 
 	}
-	
-	cout << token0;
-	cout << token1;
-	
+cout << given_str << endl; // it print last token of the string.
+tokens[1]=given_str;
+cout << tokens[0] << tokens[1];
 }
