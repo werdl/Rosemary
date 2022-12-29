@@ -29,7 +29,7 @@ int main()
 			cout <<tokens[1]<<endl;
 		}
 		if (tokens[0]==exit) {
-			shell=false;
+			break;
 		}
 		cout << "\n";
 	}
