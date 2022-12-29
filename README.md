@@ -23,3 +23,6 @@ in case catch clause is missing
 - If you want to help, great! Make a pull request
 or an issue or whatever :)
 - Enjoy (or at least try lol)
+## Python to C++
+- I have been installing and hope to get tokenisation working very soon.
+- After that I'm basically just rewriting the existing Python code
