@@ -40,6 +40,8 @@
         "xutility": "cpp",
         "algorithm": "cpp",
         "sstream": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "map": "cpp",
+        "xtree": "cpp"
     }
 }
