@@ -12,7 +12,7 @@ int main()
 		cin >> given_str;
 		string token0;
 		string token1;
-		string delim="~";
+		string delim="-";
 		size_t pos = 0;
 		string tokens[4];
 		while (( pos = given_str.find (delim)) != std::string::npos)
