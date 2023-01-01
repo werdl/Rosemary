@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="400"
+   height="175"
+   viewBox="0 0 105.83335 46.302084"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="rsmy.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="1.1893044"
+     inkscape:cx="206.8436"
+     inkscape:cy="294.28967"
+     inkscape:window-width="1920"
+     inkscape:window-height="1137"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <rect
+       x="28.588139"
+       y="58.857933"
+       width="451.52444"
+       height="196.75368"
+       id="rect113" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       sodipodi:type="star"
+       style="fill:#000000;stroke-width:0.264583"
+       id="path329"
+       inkscape:flatsided="true"
+       sodipodi:sides="6"
+       sodipodi:cx="35.372566"
+       sodipodi:cy="72.969826"
+       sodipodi:r1="15.356806"
+       sodipodi:r2="13.836004"
+       sodipodi:arg1="0.6724785"
+       sodipodi:arg2="1.1960773"
+       inkscape:rounded="0"
+       inkscape:randomized="0.001"
+       d="M 47.390281,82.526127 33.094921,88.154326 21.083212,78.58089 23.371141,63.416041 37.661918,57.785743 49.673626,67.355778 Z"
+       inkscape:transform-center-x="0.29749303"
+       inkscape:transform-center-y="0.6982711"
+       transform="rotate(22.075409,175.99636,0.98208641)" />
+    <path
+       sodipodi:type="star"
+       style="fill:#550044;stroke-width:0.264583"
+       id="path329-7"
+       inkscape:flatsided="true"
+       sodipodi:sides="6"
+       sodipodi:cx="35.372566"
+       sodipodi:cy="72.969826"
+       sodipodi:r1="15.356806"
+       sodipodi:r2="13.836004"
+       sodipodi:arg1="0.6724785"
+       sodipodi:arg2="1.1960773"
+       inkscape:rounded="0"
+       inkscape:randomized="0.001"
+       d="M 47.390281,82.526127 33.094921,88.154326 21.083212,78.58089 23.371141,63.416041 37.661918,57.785743 49.673626,67.355778 Z"
+       inkscape:transform-center-x="0.29749303"
+       inkscape:transform-center-y="0.6982711"
+       transform="rotate(22.075409,152.54458,66.672457)" />
+    <path
+       sodipodi:type="star"
+       style="fill:#000000;stroke-width:0.264583"
+       id="path329-9"
+       inkscape:flatsided="true"
+       sodipodi:sides="6"
+       sodipodi:cx="35.372566"
+       sodipodi:cy="72.969826"
+       sodipodi:r1="15.356806"
+       sodipodi:r2="13.836004"
+       sodipodi:arg1="0.6724785"
+       sodipodi:arg2="1.1960773"
+       inkscape:rounded="0"
+       inkscape:randomized="0.001"
+       d="M 47.390281,82.526127 33.094921,88.154326 21.083212,78.58089 23.371141,63.416041 37.661918,57.785743 49.673626,67.355778 Z"
+       inkscape:transform-center-x="0.29749303"
+       inkscape:transform-center-y="0.6982711"
+       transform="rotate(22.075409,198.67562,118.05247)" />
+    <path
+       sodipodi:type="star"
+       style="fill:#800066;stroke-width:0.264583"
+       id="path329-6"
+       inkscape:flatsided="true"
+       sodipodi:sides="6"
+       sodipodi:cx="35.372566"
+       sodipodi:cy="72.969826"
+       sodipodi:r1="15.356806"
+       sodipodi:r2="13.836004"
+       sodipodi:arg1="0.6724785"
+       sodipodi:arg2="1.1960773"
+       inkscape:rounded="0"
+       inkscape:randomized="0.001"
+       d="M 47.390281,82.526127 33.094921,88.154326 21.083212,78.58089 23.371141,63.416041 37.661918,57.785743 49.673626,67.355778 Z"
+       inkscape:transform-center-x="0.29749303"
+       inkscape:transform-center-y="0.6982711"
+       transform="rotate(22.075409,174.20714,183.79579)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:28.7934px;font-family:Consolas;-inkscape-font-specification:Consolas;fill:#550044;stroke-width:0.299931"
+       x="8.3010902"
+       y="24.966885"
+       id="text520"
+       transform="scale(1.1335995,0.88214575)"><tspan
+         sodipodi:role="line"
+         id="tspan518"
+         style="font-size:28.7934px;stroke-width:0.299931"
+         x="8.3010902"
+         y="24.966885">R</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:28.7934px;font-family:Consolas;-inkscape-font-specification:Consolas;fill:#000000;stroke-width:0.299931"
+       x="27.723076"
+       y="40.711578"
+       id="text520-2"
+       transform="scale(1.1335995,0.88214576)"><tspan
+         sodipodi:role="line"
+         id="tspan518-3"
+         style="font-size:28.7934px;fill:#000000;stroke-width:0.299931"
+         x="27.723076"
+         y="40.711578">S</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:28.7934px;font-family:Consolas;-inkscape-font-specification:Consolas;fill:#000000;stroke-width:0.299931"
+       x="68.543091"
+       y="40.963772"
+       id="text520-2-0"
+       transform="scale(1.1335995,0.88214576)"><tspan
+         sodipodi:role="line"
+         id="tspan518-3-0"
+         style="font-size:28.7934px;fill:#000000;stroke-width:0.299931"
+         x="68.543091"
+         y="40.963772">Y</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:28.7934px;font-family:Consolas;-inkscape-font-specification:Consolas;fill:#800066;stroke-width:0.299931"
+       x="48.918087"
+       y="25.327946"
+       id="text520-4"
+       transform="scale(1.1335995,0.88214576)"
+       inkscape:highlight-color="#000000"><tspan
+         sodipodi:role="line"
+         id="tspan518-8"
+         style="font-size:28.7934px;fill:#800066;stroke-width:0.299931"
+         x="48.918087"
+         y="25.327946">M</tspan></text>
+  </g>
+</svg>
