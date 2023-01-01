@@ -15,7 +15,7 @@
 - I'll write my own interpreter, I won't use
 Bison or Flex or whatever
 - Interpreted for the time being, not compiled cos I don't know enough assembly
-- Latest executable is at .\rosemary.exe
+- Latest executable is at SRC/CPP/tab.exe
 - You can compile for MacOS if you like
 - I will add file execute abilities some time soon
 - Also strings don't need speech marks, 
@@ -27,5 +27,8 @@ in case catch clause is missing
 or an issue or whatever :)
 - Enjoy (or at least try lol)
 ## Python to C++
-- I have been installing and hope to get tokenisation working very soon.
-- After that I'm basically just rewriting the existing Python code
+- Tokenisation ✅
+- Print ✅
+- Variables ❎
+- Operands ❎
+- IF ELIF ELSE ❎
