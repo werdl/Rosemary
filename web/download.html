@@ -64,7 +64,15 @@
             width: auto;
         }
         .flex-container {
-            display: grid;
+            display: flex;
+        }
+        div h2{
+            margin-right: 20px;
+        }
+        .download {
+            border-radius: 10px;
+            background-color: darkgreen;
+            padding:10px
         }
     </style>
 </head>
@@ -84,12 +92,26 @@
 </div>
 </nav>
     </header>
-    <h1>Rosemary, or RSMY</h1>
-    <h2>A programming language both approchable and fast.</h2>
-    <h2>Inspired by syntax from<br><br>
-        <img class="lang" src="../python.png" alt="Python">
-        <img class="lang" src="../php.png" alt="PHP">
-        <img class="lang" src="../perl.png" alt="Perl">
-        <img class="lang" src="../cpp.png" alt="C++">
+    <h1>Download The Latest Releases!</h1>
+    <div class="flex-container">
+        <div class="windows" style="flex-grow: 1">
+            <h2>Windows Release</h2>
+            <img src="../windows.png" alt="windows" class="lang">
+            <br>
+            <br>
+            <br>
+            <a class="download" href="../src/cpp/tab.exe">Download Now</a>
+        </div>
+        <div class="mac" style="flex-grow: 1">
+            <h2>MacOS Release</h2>
+            <img src="../macos.png" alt="windows" class="lang">
+            
+        </div>
+        <div class="linux" style="flex-grow: 1">
+            <h2>Linux Release</h2>
+            <img src="../Tux.png" alt="windows" class="lang">
+        </div>
+    </div>
+    
 </body>
 </html>
