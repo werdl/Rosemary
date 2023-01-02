@@ -1,31 +1,95 @@
-# Rosemary
-## Like Python, but with brackets. 
-- Basically: strongly typed, mix of python perl and php syntax
-- It uses {} rather than indentation, as I think it allows for more options.
-- Check out syntax.txt which I guess is also the docs?
-- Extension is .rsmy by default but to be honest it doesn't really matter.
-- .rsmy - Rosemary file
-- Error checking is pretty good right now, not
-- I'll try and fix that.
-## Why use Rosemary?
-- idk
-- general purpose?
-## Plans for the project
-- Change from Python to C++ for performance
-- I'll write my own interpreter, I won't use
-Bison or Flex or whatever
-- Interpreted for the time being, not compiled cos I don't know enough assembly
-- Latest executable is at .\rosemary.exe
-- You can compile for MacOS if you like
-- I will add file execute abilities some time soon
-- Also strings don't need speech marks, 
-Rosemary does that for you
-- I'll try to implement error handling as best
-as I can, but you have to be careful with syntax,
-in case catch clause is missing
-- If you want to help, great! Make a pull request
-or an issue or whatever :)
-- Enjoy (or at least try lol)
-## Python to C++
-- I have been installing and hope to get tokenisation working very soon.
-- After that I'm basically just rewriting the existing Python code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Rosemary</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background: black !important;
+            margin:0 !important;
+            text-align: center;
+        }
+        .nav {
+            display:flex;
+            flex-direction: row;
+            list-style:none;
+            font-size:2.25vh;
+            overflow: hidden;
+            background-color: rgb(90 90 90);
+            margin: 0;
+            padding: 0;
+            
+            border-bottom-right-radius: 10px;
+            height:7vh;
+            justify-content: right;
+        }
+        p {
+            margin-left:20px;
+            float:right;
+        }
+
+        a {
+            color:white;
+            text-decoration: none;
+        }
+        a:hover {
+            color: black;
+        }
+        .c1 {
+            margin-right:1vw
+        }
+        img#logo {
+            float:left;
+        }
+        img#logo {
+            background-color: rgb(90 90 90);
+            border-bottom-left-radius: 10px;
+            height:7vh
+        }
+        h1,h2,h3 {
+            color:white;
+        }
+        img.lang {
+            height:7.5vh;
+            width: auto;
+        }
+        .flex-container {
+            display: grid;
+        }
+        .githublink {
+            color:white
+        }
+        .githublink:hover {
+            color:grey
+        }
+    </style>
+</head>
+<body>
+    <div id="logo">
+    <a href="index.html">
+    <img id="logo" src="rsmy.svg" alt="logo" height="75vh">
+    </a>
+    </div>
+    <header class="nav">
+        <div class="bob">
+            <nav>
+    <p class="c1"><a href="download.html">Download</a></p>
+    <p><a href="about.html">About Us</a></p>
+    <p><a href="src/cpp/tab.cpp">Code</a></p>
+    <p class=""><a href="http://gonerogueproductions.github.io/rosemary"><i class="fa fa-github"></i>GitHub</a></p>
+</div>
+</nav>
+    </header>
+    <h1>A GoneRogue Project</h1>
+    <h2>Written in C++ by <a class="githublink" href="http://github.com/werdl">werdl</a></h2>
+    <h3>Our goal is to make programming easier and faster.
+        We took syntax from several poular languages and made our own.
+        Originally written in Python, it is now mainly C++.
+    </h3>
+    <h3>The id</h3>
+</body>
+</html>
