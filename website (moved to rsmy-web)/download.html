@@ -50,7 +50,7 @@
             border-bottom-left-radius: 10px;
             height:7vh
         }
-        h1,h2,h3 {
+        h1,h2 {
             color:white;
         }
         img.lang {
@@ -58,15 +58,28 @@
             width: auto;
         }
         .flex-container {
-            display: grid;
+            display: flex;
         }
-        .githublink {
-            color:white
+        div h2{
+            margin-right: 20px;
         }
-        .githublink:hover {
-            color:grey
+        .download {
+            border-radius: 10px;
+            background-color: darkgreen;
+            padding:10px
+        }
+        .download-red {
+            border-radius: 10px;
+            background-color: red;
+            padding:10px;
+            color:white;
         }
     </style>
+    <script>
+        function nocompile() {
+            alert("Warning - This is raw uncompiled c++")
+        }
+    </script>
 </head>
 <body>
     <div id="logo">
@@ -79,17 +92,39 @@
             <nav>
     <p class="c1"><a href="download.html">Download</a></p>
     <p><a href="about.html">About Us</a></p>
-    <p><a href="../src/cpp/tab.cpp">Code</a></p>
+    <p><a href="src/cpp/tab.cpp">Code</a></p>
     <p class=""><a href="http://gonerogueproductions.github.io/rosemary"><i class="fa fa-github"></i>GitHub</a></p>
 </div>
 </nav>
     </header>
-    <h1>A GoneRogue Project</h1>
-    <h2>Written in C++ by <a class="githublink" href="http://github.com/werdl">werdl</a></h2>
-    <h3>Our goal is to make programming easier and faster.
-        We took syntax from several poular languages and made our own.
-        Originally written in Python, it is now mainly C++.
-    </h3>
-    <h3>The id</h3>
+    <h1>Download The Latest Releases!</h1>
+    <div class="flex-container">
+        <div class="windows" style="flex-grow: 1">
+            <h2>Windows Release</h2>
+            <img src="windows.png" alt="windows" class="lang">
+            <br>
+            <br>
+            <br>
+            <a class="download" href="src/cpp/tab.exe">Download Now</a>
+        </div>
+        <div class="mac" style="flex-grow: 1">
+            <h2>MacOS Release</h2>
+            <img src="macos.png" alt="windows" class="lang">
+            <br>
+            <br>
+            <br>
+            <a onclick="javascript:nocompile()" class="download-red" href="
+            src/cpp/tab.cpp">Not Compiled</a>
+        </div>
+        <div class="linux" style="flex-grow: 1">
+            <h2>Linux Release</h2>
+            <img src="Tux.png" alt="windows" class="lang">
+            <br>
+            <br>
+            <br>
+            <a onclick="javascript:nocompile()" class="download-red" href="src/cpp/tab.cpp">Not Compiled</a>
+        </div>
+    </div>
+    
 </body>
 </html>
