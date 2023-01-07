@@ -32,3 +32,4 @@ or an issue or whatever :)
 - Variables ❎
 - Operands ❎
 - IF ELIF ELSE ❎
+- Sprig Package Manager ✅ [find it here](http://github.com/gonerogueproductions/Sprig)
