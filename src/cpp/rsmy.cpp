@@ -12,15 +12,13 @@ using std::vector; using std::istringstream;
 using std::stringstream;
 std::map<string, string>  variables;
 string x22;
-string newvar(string varname,string value) {
+void newvar(string varname,string value) {
     variables[varname]=value;
-    x22=variables[varname];
-    return variables[varname];
 }
-void getvar(string varname2) {
+void getvar(string f1i) {
     auto iter = variables.begin();
             while (iter != variables.end()) {
-        if (varname2==iter->first) {
+        if (f1i==iter->first) {
             cout <<iter->second;
         }
         ++iter;
@@ -71,18 +69,13 @@ string f1,f1i,f3,f4i,f4,f5,f5i;
 		if (f5==print) {
 		}
 		else if (f3==dollar) {
-            string x2 = newvar(lex[2],lex[4]);
+            newvar(lex[2],lex[4]);
             
         }
         else if (f1==dollr) {
-            auto iter = variables.begin();
-            while (iter != variables.end()) {
-        if (f1i==iter->first) {
-            cout <<iter->second;
-        }
-        ++iter;
-    }
-        }
-        cout <<endl;
+            getvar(f1i);
+            cout <<endl;
+;        }
+        
     }
 }
