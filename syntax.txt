@@ -1,0 +1,54 @@
+~include @example@
+func helloworld(int hi) {
+  print "hello world";
+  float x = 3.1415;
+  print $x;
+  if ($x==3.1415) {
+    print "pi";
+  }
+  elif ($x>3.1415) {
+    print "bigger than pi";
+  }
+  else {
+    print "smaller than pi";
+  }
+  print $hi;
+}
+helloworld(9);
+print "Main Function Done!";
+@example.helloworld();
+
+class construct(string name, float rand) {
+  func __init__() {
+    print "init";
+    print $name;
+    print $rand;
+  }
+  func hiwrld() {
+    string prompt = "Enter a string";
+    input(string userInput,$prompt);
+    print $userInput;
+    bool good = false;
+    while ($good==false) {
+      try {
+        input(string userBoolean,"Enter a boolean value");
+        $good=true;
+      }
+      catch WrongType {
+        print "Ensure it is boolean!";
+        $good=false;
+      }
+    }
+    print $userBoolean;
+  }
+}
+int x;
+for ($x++,$x<5) {
+  print "hi";
+}
+string namez = "foo";
+float random = 1.618;
+classtest = new construct(namez,random);
+classtest.hiwrld();
+# EOF
+return 0;
