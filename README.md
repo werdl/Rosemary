@@ -16,7 +16,7 @@
 - I'll write my own interpreter, I won't use
 Bison or Flex or whatever
 - Interpreted for the time being, not compiled cos I don't know enough assembly
-- Latest executable is at SRC/CPP/tab.exe
+- Latest executable is at SRC/rosemary.exe
 - You can compile for MacOS if you like
 - I will add file execute abilities some time soon
 - Also strings don't need speech marks, 
