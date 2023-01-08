@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <map>
 #include <cstring>
+#include <fstream>
 using std::cout; using std::cin;
 using std::endl; using std::string;
 using std::vector; using std::istringstream;
@@ -24,12 +25,8 @@ void getvar(string f1i) {
         ++iter;
     }
 }
-int main(){
-    while (1) {
-    string str;
-    cout << '>';
-    string tokens;
-    getline(cin,tokens);
+void parse(string tokens) {
+
 	string print="print";
 	string exita="exit";
     string dollar = "int";
@@ -78,4 +75,30 @@ string f1,f1i,f3,f4i,f4,f5,f5i;
 ;        }
         
     }
+
+int main(int argc, char** argv){
+    string e2[6];    
+    for (int i = 0; i < argc; ++i) {
+        e2[i]=argv[i];
+    }   
+    string checkfor="";
+    if (e2[1]==checkfor) {
+    while (1) {
+    cout << '>';
+    string tokens;
+    getline(cin,tokens);
+    parse(tokens);
+    }
+} else {
+    string mystring;
+std::ifstream myfile (e2[1]);
+if ( myfile.is_open() ) {
+char mychar;
+while ( myfile ) {
+mychar = myfile.get();
+std::cout << mychar;
+}
+} // pipe stream's content to standard output
+
+}
 }
