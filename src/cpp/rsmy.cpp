@@ -7,6 +7,7 @@
 #include <map>
 #include <cstring>
 #include <fstream>
+#include "string.h"
 using std::cout; using std::cin;
 using std::endl; using std::string;
 using std::vector; using std::istringstream;
@@ -17,11 +18,12 @@ std::map<string, float> floats;
 void newvar(string varname,string value) {
     strings[varname]=value;
 }
-void getvar(string f1i) {
+string getvar(string f1i) {
     auto iter = strings.begin();
             while (iter != strings.end()) {
         if (f1i==iter->first) {
-            cout <<iter->second;
+            return iter->second;
+            break;
         }
         ++iter;
     }
@@ -29,7 +31,8 @@ void getvar(string f1i) {
     auto iteri = ints.begin();
             while (iteri != ints.end()) {
         if (f1i==iteri->first) {
-            cout <<iteri->second;
+            return std::__cxx11::to_string(iteri->second);
+            break;
         }
         ++iteri;
     }
@@ -37,10 +40,12 @@ void getvar(string f1i) {
     auto iterf = floats.begin();
             while (iterf != floats.end()) {
         if (f1i==iterf->first) {
-            cout <<iterf->second;
+            return std::__cxx11::to_string(iterf->second);
+            break;
         }
         ++iterf;
     }
+    return "";
 }
 
 
@@ -113,7 +118,7 @@ lex4.erase (std::remove(lex4.begin(), lex4.end(), chars[i]), lex4.end());
             newfloat(lex[2],stof(lex[4])); 
         }
         else if (f1==dollr) {
-            getvar(f1i);
+            cout << getvar(f1i);
             cout <<endl;
 ;        }
         
