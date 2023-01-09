@@ -98,6 +98,8 @@ string f1,f1i,f3,f4i,f4,f5,f5i,f6,f6i;
 
 
 		if (f5==print) {
+            cout << f5i;
+            cout <<endl;
 		}
 		else if (f3==intd) {
             newint(lex[2],stoi(lex[4])); 
@@ -123,6 +125,19 @@ lex4.erase (std::remove(lex4.begin(), lex4.end(), chars[i]), lex4.end());
 ;        }
         
     }
+vector<string> split(const string& str, const char& delim) 
+{
+    stringstream ss(str);
+    string token;
+    vector<string> tokens;
+    while (getline(ss, token, delim)) 
+    {
+        tokens.push_back(token);
+    }
+    return tokens;
+}
+
+
 
 int main(int argc, char** argv){
     string e2[6];    
@@ -139,14 +154,19 @@ int main(int argc, char** argv){
     }
 } else {
     string mystring;
-std::ifstream myfile (e2[1]);
-if ( myfile.is_open() ) {
-char mychar;
-while ( myfile ) {
-mychar = myfile.get();
-std::cout << mychar;
-}
-} // pipe stream's content to standard output
+std::ifstream ifs(e2[1]);
 
+  std::string content( (std::istreambuf_iterator<char>(ifs) ),
+
+    (std::istreambuf_iterator<char>() ) );
+    content.erase(std::remove(content.begin(), content.end(), '\n'),
+            content.end());
+
+    char delim = ';';
+    vector<string> tokens = split(content, delim);
+    for (string token : tokens) 
+    {
+        parse(token);
+    }
 }
 }
