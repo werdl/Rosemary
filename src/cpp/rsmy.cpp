@@ -12,8 +12,8 @@ using std::endl; using std::string;
 using std::vector; using std::istringstream;
 using std::stringstream;
 std::map<string, string> strings;
-std::map<string, string> ints;
-std::map<string, string> floats;
+std::map<string, int> ints;
+std::map<string, float> floats;
 void newvar(string varname,string value) {
     strings[varname]=value;
 }
@@ -44,10 +44,10 @@ void getvar(string f1i) {
 }
 
 
-void newint(string varname,string value) {
+void newint(string varname,int value) {
     ints[varname]=value;
 }
-void newfloat(string varname,string value) {
+void newfloat(string varname,float value) {
     floats[varname]=value;
 }
 
@@ -95,7 +95,7 @@ string f1,f1i,f3,f4i,f4,f5,f5i,f6,f6i;
 		if (f5==print) {
 		}
 		else if (f3==intd) {
-            newint(lex[2],lex[4]); 
+            newint(lex[2],stoi(lex[4])); 
         }
         else if (f6==stringd) {
             string lex4=lex[4];
@@ -110,7 +110,7 @@ lex4.erase (std::remove(lex4.begin(), lex4.end(), chars[i]), lex4.end());
             
         }
         else if (f5==floatd) {
-            newfloat(lex[2],lex[4]); 
+            newfloat(lex[2],stof(lex[4])); 
         }
         else if (f1==dollr) {
             getvar(f1i);
