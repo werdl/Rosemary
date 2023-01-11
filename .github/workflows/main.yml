@@ -1,17 +1,16 @@
-name: ftp deploy
 on: push
+name: Publish Website
 jobs:
-  build:
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      # Here is the deployment action
-      - name: Upload from public_html via FTP
-        uses: airvzxf/ftp-deployment-action@latest
-        with:
-          server: ftp://files.000webhost.com
-          user: sprigrsmy
-          password: ${{ secrets.FTP_PASSWORD }}
-          local_dir: "./public_html"
-          remote_dir: "./public_html"
-          delete: "false"
+    - uses: actions/checkout@v2.1.0
+      with:
+        fetch-depth: 2
+    - name: FTP-Deploy-Action
+      uses: SamKirkland/FTP-Deploy-Action@3.1.1
+      with:
+        ftp-server: ftp://files.000webhost.com/public_html
+        ftp-username: sprigrsmy
+        ftp-password: ${{ secrets.FTP_PASSWORD }}
