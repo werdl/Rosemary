@@ -8,6 +8,7 @@
 #include <cstring>
 #include <fstream>
 #include "string.h"
+
 using std::cout; using std::cin;
 using std::endl; using std::string;
 using std::vector; using std::istringstream;
@@ -15,6 +16,78 @@ using std::stringstream;
 std::map<string, string> strings;
 std::map<string, int> ints;
 std::map<string, float> floats;
+double eval(string expr)
+{
+    string xxx; // Get Rid of Spaces
+    for (int i = 0; i < expr.length(); i++)
+    {
+        if (expr[i] != ' ')
+        {
+            xxx += expr[i];
+        }
+    }
+
+    string tok = ""; // Do parantheses first
+    for (int i = 0; i < xxx.length(); i++)
+    {
+        if (xxx[i] == '(')
+        {
+            int iter = 1;
+            string token;
+            i++;
+            while (true)
+            {
+                if (xxx[i] == '(')
+                {
+                    iter++;
+                } else if (xxx[i] == ')')
+                {
+                    iter--;
+                    if (iter == 0)
+                    {
+                        i++;
+                        break;
+                    }
+                }
+                token += xxx[i];
+                i++;
+            }
+            //cout << "(" << token << ")" << " == " << to_string(eval(token)) <<  endl;
+            tok += std::to_string(eval(token));
+        }
+        tok += xxx[i];
+    }
+
+    for (int i = 0; i < tok.length(); i++)
+    {
+        if (tok[i] == '+')
+        {
+            //cout << tok.substr(0, i) + " + " +  tok.substr(i+1, tok.length()-i-1) << " == " << eval(tok.substr(0, i)) + eval(tok.substr(i+1, tok.length()-i-1)) << endl;
+            return eval(tok.substr(0, i)) + eval(tok.substr(i+1, tok.length()-i-1));
+        } else if (tok[i] == '-')
+        {
+            //cout << tok.substr(0, i) + " - " +  tok.substr(i+1, tok.length()-i-1) << " == " << eval(tok.substr(0, i)) - eval(tok.substr(i+1, tok.length()-i-1)) << endl;
+            return eval(tok.substr(0, i)) - eval(tok.substr(i+1, tok.length()-i-1));
+        }
+    }
+
+    for (int i = 0; i < tok.length(); i++)
+    {
+        if (tok[i] == '*')
+        {
+            //cout << tok.substr(0, i) + " * " +  tok.substr(i+1, tok.length()-i-1) << " == " << eval(tok.substr(0, i)) * eval(tok.substr(i+1, tok.length()-i-1)) << endl;
+            return eval(tok.substr(0, i)) * eval(tok.substr(i+1, tok.length()-i-1));
+        } else if (tok[i] == '/')
+        {
+            //cout << tok.substr(0, i) + " / " +  tok.substr(i+1, tok.length()-i-1) << " == " << eval(tok.substr(0, i)) / eval(tok.substr(i+1, tok.length()-i-1)) << endl;
+            return eval(tok.substr(0, i)) / eval(tok.substr(i+1, tok.length()-i-1));
+        }
+    }
+
+    //cout << stod(tok.c_str()) << endl;
+    const char * zb= tok.c_str();
+    return std::atof(zb); // Return the value...
+}
 void newvar(string varname,string value) {
     strings[varname]=value;
 }
@@ -47,15 +120,12 @@ string getvar(string f1i) {
     }
     return "";
 }
-
-
 void newint(string varname,int value) {
     ints[varname]=value;
 }
 void newfloat(string varname,float value) {
     floats[varname]=value;
 }
-
 void parse(string tokens) {
 
 	string print="print";
@@ -65,6 +135,7 @@ void parse(string tokens) {
     string floatd = "float";
     string bob = "view";
     string dollr = "$";
+    string eval2 = "?";
     int x=0;
     string lex[100];
     stringstream ss(tokens);  
@@ -98,7 +169,7 @@ string f1,f1i,f3,f4i,f4,f5,f5i,f6,f6i;
 
 
 		if (f5==print) {
-            cout << f5i;
+            cout << f6i;
             cout <<endl;
 		}
 		else if (f3==intd) {
@@ -123,7 +194,9 @@ lex4.erase (std::remove(lex4.begin(), lex4.end(), chars[i]), lex4.end());
             cout << getvar(f1i);
             cout <<endl;
 ;        }
-        
+        else if (f1==eval2) {
+            cout << eval(f1i);
+        }
     }
 vector<string> split(const string& str, const char& delim) 
 {

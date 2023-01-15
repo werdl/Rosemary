@@ -48,6 +48,7 @@ for ($x++,$x<5) {
 }
 string namez = "foo";
 float random = 1.618;
+print ?(16*56);
 classtest = new construct(namez,random);
 classtest.hiwrld();
 # EOF
