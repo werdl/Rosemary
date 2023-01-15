@@ -166,7 +166,7 @@ string f1,f1i,f3,f4i,f4,f5,f5i,f6,f6i;
           f4i=tokens.substr(4,tokens.length());}
     if (t>5) {     f5=tokens.substr(0,5); f5i=tokens.substr(5,tokens.length());}
     if (t>6) {     f6=tokens.substr(0,6); f6i=tokens.substr(6,tokens.length());}
-
+    int xz = tokens.length();
 
 		if (f5==print) {
             cout << f6i;
@@ -194,9 +194,39 @@ lex4.erase (std::remove(lex4.begin(), lex4.end(), chars[i]), lex4.end());
             cout << getvar(f1i);
             cout <<endl;
 ;        }
-        else if (f1==eval2) {
-            cout << eval(f1i);
-        }
+    int place=0;
+        while(1) {
+            if (place>tokens.length()) {
+                break;
+            }
+            if (tokens[place]=='?') {
+                string tokensplace=tokens.substr(place,tokens.length());
+                string likelyeval=tokens.substr(place+1,tokens.length());
+                string f1iclone=f1i;
+                string to_eval;
+                char f1iclonechar;
+                for (int spot=1;f1iclonechar!=')';spot++) {
+                f1iclonechar=likelyeval[spot];
+                if (f1iclonechar!=')'){
+                    to_eval=to_eval+f1iclonechar;
+                }
+            }
+            cout << eval(to_eval)<<endl;
+            }
+            place++;
+        } 
+        // else if (f1==eval2) {
+        //     string f1iclone=f1i;
+        //     string to_eval;
+        //     char f1iclonechar;
+        //     for (int spot=1;f1iclonechar!=')';spot++) {
+        //         f1iclonechar=f1iclone[spot];
+        //         if (f1iclonechar!=')'){
+        //             to_eval=to_eval+f1iclonechar;
+        //         }
+        //     }
+        //     cout << eval(to_eval)<<endl;
+        // }
     }
 vector<string> split(const string& str, const char& delim) 
 {
