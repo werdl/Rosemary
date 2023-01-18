@@ -23,7 +23,6 @@ void loga(string call,bool success,string debug,string message) {
 
     file_out.open(filename, std::ios_base::app);
     file_out << "Call was "<<call << "Success "<<success <<"Debug info: "<<debug<<"Any messages: "<<message << endl;
-    cout << "Done !" << endl;
 }
 void thrftl(string debug,string message) {
     cout << "Fatal runtime error occured - " << message;
