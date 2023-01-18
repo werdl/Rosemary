@@ -22,7 +22,7 @@ void loga(string call,bool success,string debug,string message) {
     std::fstream file_out;
 
     file_out.open(filename, std::ios_base::app);
-    file_out << "Call was "<<call << "Success "<<success <<"Debug info: "<<debug<<"Any messages: "<<message << endl;
+    file_out << "Call was \""<<call << "\" Success: "<<success <<" Debug info: \""<<debug<<"\" Any messages: \""<<message <<"\""<< endl;
 }
 void thrftl(string debug,string message) {
     cout << "Fatal runtime error occured - " << message;
@@ -161,7 +161,7 @@ void newfloat(string varname,float value) {
     floats[varname]=value;
 }
 void parse(string tokens) {
-    loga(tokens,1,"N/a","n/A");
+    
 	string print="print";
 	string exita="exit";
     string intd = "int";
@@ -203,25 +203,36 @@ string f1,f1i,f3,f4i,f4,f5,f5i,f6,f6i;
     int xz = tokens.length();
 
 		if (f5==print) {
+            loga(tokens,1,"CALLED PRINT FUNC","null");
             cout << f6i;
             cout <<endl;
 		}
 		else if (f3==intd) {
             string zed=lex[4];
             char *hello=zed.data();
-            bool notint;
+            int notint;
+            int ints = 0;
+            bool containsoper;
             for (int i = 0; i < strlen(hello); i++) {
             if(isdigit(hello[i])) {
                 nothing();
+                notint=0;
+                ints++;
+            }
+            else if (hello[i]=='+'|| hello[i]=='-'|| hello[i]=='/'|| hello[i]=='*') {
+                containsoper=true;
             }
             else {
-                notint=true;
+                notint=1;
+            }
+            }
+            if (notint!=1 && ints!=0) {
+                newint(lex[2],stoi(lex[4])); 
+                loga(tokens,1,"CALLED INT SUCCESS, DECLARED "+lex[4],"SUCCESS");
+            } else {
                 string debugmsg=lex[4]+" is not an integer";
                 nonftl(debugmsg,"ValueError");
-            }
-            }
-            if (notint!=true) {
-                newint(lex[2],stoi(lex[4])); 
+                loga(tokens,0,"CALLED INT FAIL, ATTEMPTED  "+lex[4],"BUT"+lex[4]+" is not an integer");
             }
         }
         else if (f6==stringd) {
