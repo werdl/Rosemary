@@ -8,7 +8,7 @@
 #include <cstring>
 #include <fstream>
 #include "string.h"
-
+#include <fstream>
 using std::cout; using std::cin;
 using std::endl; using std::string;
 using std::vector; using std::istringstream;
@@ -16,6 +16,38 @@ using std::stringstream;
 std::map<string, string> strings;
 std::map<string, int> ints;
 std::map<string, float> floats;
+void loga(string call,bool success,string debug,string message) {
+    // connect to file
+    string filename("rsmy.log");
+    std::fstream file_out;
+
+    file_out.open(filename, std::ios_base::app);
+    file_out << "Call was "<<call << "Success "<<success <<"Debug info: "<<debug<<"Any messages: "<<message << endl;
+    cout << "Done !" << endl;
+}
+void thrftl(string debug,string message) {
+    cout << "Fatal runtime error occured - " << message;
+    cout <<endl<<"Do you want more debugging information? 1 or 0: ";
+    string hello7;
+    cin >>  hello7;
+    if (hello7=="1") {
+        cout << debug <<endl;
+    }
+    else {
+        cout << "Stopping Program...";
+        exit(0);
+    } 
+}
+void nonftl(string debug,string message) {
+    cout << "Non-Fatal runtime error occured - " << message;
+    cout <<endl<<"Do you want more debugging information? 1 or 0: ";
+    string hello7;
+    cin >>  hello7;
+    if (hello7=="1") {
+        cout << debug;
+        cout << endl;
+    }
+}
 double eval(string expr)
 {
     string xxx; // Get Rid of Spaces
@@ -118,16 +150,19 @@ string getvar(string f1i) {
         }
         ++iterf;
     }
-    return "";
+    return "Variable " + f1i + " does not exist!";
 }
 void newint(string varname,int value) {
     ints[varname]=value;
+}
+void nothing() {
+    
 }
 void newfloat(string varname,float value) {
     floats[varname]=value;
 }
 void parse(string tokens) {
-
+    loga(tokens,1,"N/a","n/A");
 	string print="print";
 	string exita="exit";
     string intd = "int";
@@ -173,7 +208,22 @@ string f1,f1i,f3,f4i,f4,f5,f5i,f6,f6i;
             cout <<endl;
 		}
 		else if (f3==intd) {
-            newint(lex[2],stoi(lex[4])); 
+            string zed=lex[4];
+            char *hello=zed.data();
+            bool notint;
+            for (int i = 0; i < strlen(hello); i++) {
+            if(isdigit(hello[i])) {
+                nothing();
+            }
+            else {
+                notint=true;
+                string debugmsg=lex[4]+" is not an integer";
+                nonftl(debugmsg,"ValueError");
+            }
+            }
+            if (notint!=true) {
+                newint(lex[2],stoi(lex[4])); 
+            }
         }
         else if (f6==stringd) {
             string lex4=lex[4];
@@ -188,7 +238,7 @@ lex4.erase (std::remove(lex4.begin(), lex4.end(), chars[i]), lex4.end());
             
         }
         else if (f5==floatd) {
-            newfloat(lex[2],stof(lex[4])); 
+            newfloat(lex[2],eval(lex[4])); 
         }
         else if (f1==dollr) {
             cout << getvar(f1i);
@@ -248,7 +298,7 @@ int main(int argc, char** argv){
         e2[i]=argv[i];
     }   
     string checkfor="";
-    if (e2[1]==checkfor) {
+    if (1) {
     while (1) {
     cout << '>';
     string tokens;
