@@ -31,7 +31,7 @@ or an issue or whatever :)
 - Tokenisation ✅
 - Print ✅
 - Variables ✅
-- Operands ❎
+- Operands ✅
 - IF ELIF ELSE ❎
 - Sprig Package Manager ✅ [find it here](http://github.com/gonerogueproductions/Sprig)
 - FTP deployment ✅
