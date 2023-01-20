@@ -12,13 +12,13 @@
 - idk
 - general purpose?
 ## Plans for the project
-- Change from Python to C++ for performance
+- Change from Python to C++ for performance ✅
 - I'll write my own interpreter, I won't use
 Bison or Flex or whatever
 - Interpreted for the time being, not compiled cos I don't know enough assembly
-- Latest executable is at SRC/rosemary.exe
+- Latest executable is at SRC/rsmy.exe
 - You can compile for MacOS if you like
-- I will add file execute abilities some time soon
+- Provide a command line argument to execute a file, else a shell will boot
 - Also strings don't need speech marks, 
 Rosemary does that for you
 - I'll try to implement error handling as best
@@ -27,11 +27,13 @@ in case catch clause is missing
 - If you want to help, great! Make a pull request
 or an issue or whatever :)
 - Enjoy (or at least try lol)
-## Python to C++
+## Next Steps
 - Tokenisation ✅
 - Print ✅
 - Variables ✅
 - Operands ✅
 - IF ELIF ELSE ❎
+- WHILE FOR FOREACH ❎
+- TRY CATCH ❎
 - Sprig Package Manager ✅ [find it here](http://github.com/gonerogueproductions/Sprig)
 - FTP deployment ✅
