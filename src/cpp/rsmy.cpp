@@ -26,26 +26,11 @@ void loga(string call,bool success,string debug,string message) {
 }
 void thrftl(string debug,string message) {
     cout << "Fatal runtime error occured - " << message;
-    cout <<endl<<"Do you want more debugging information? 1 or 0: ";
-    string hello7;
-    cin >>  hello7;
-    if (hello7=="1") {
-        cout << debug <<endl;
-    }
-    else {
-        cout << "Stopping Program...";
-        exit(0);
-    } 
+    loga("null",0,"THREW NON FATAL ERROR",debug);
 }
 void nonftl(string debug,string message) {
     cout << "Non-Fatal runtime error occured - " << message;
-    cout <<endl<<"Do you want more debugging information? 1 or 0: ";
-    string hello7;
-    cin >>  hello7;
-    if (hello7=="1") {
-        cout << debug;
-        cout << endl;
-    }
+    loga("null",0,"THREW FATAL ERROR",debug);
 }
 double eval(string expr)
 {
@@ -208,6 +193,7 @@ string f1,f1i,f3,f4i,f4,f5,f5i,f6,f6i;
             cout <<endl;
 		}
 		else if (f3==intd) {
+            
             string zed=lex[4];
             char *hello=zed.data();
             int notint;
@@ -232,7 +218,8 @@ string f1,f1i,f3,f4i,f4,f5,f5i,f6,f6i;
             } else {
                 string debugmsg=lex[4]+" is not an integer";
                 nonftl(debugmsg,"ValueError");
-                loga(tokens,0,"CALLED INT FAIL, ATTEMPTED  "+lex[4],"BUT"+lex[4]+" is not an integer");
+                loga(tokens,0,"CALLED INT FUNC","null");
+                return;
             }
         }
         else if (f6==stringd) {
@@ -248,9 +235,11 @@ lex4.erase (std::remove(lex4.begin(), lex4.end(), chars[i]), lex4.end());
             
         }
         else if (f5==floatd) {
+            loga(tokens,1,"CALLED FLOAT FUNC","null");
             newfloat(lex[2],eval(lex[4])); 
         }
         else if (f1==dollr) {
+            loga(tokens,1,"CALLED VAR "+f1i,"null");
             cout << getvar(f1i);
             cout <<endl;
 ;        }
@@ -271,7 +260,16 @@ lex4.erase (std::remove(lex4.begin(), lex4.end(), chars[i]), lex4.end());
                     to_eval=to_eval+f1iclonechar;
                 }
             }
+            try {
             cout << eval(to_eval)<<endl;
+            string error="Evaluation Error!";
+            throw to_eval;
+            string z=to_eval;
+            } catch(string to_eval) {
+                nonftl("Evaluation Error",to_eval);
+                return;
+            }
+
             }
             place++;
         } 
@@ -310,7 +308,7 @@ int main(int argc, char** argv){
     string checkfor="";
     if (1) {
     while (1) {
-    cout << '>';
+    cout << "$~>";
     string tokens;
     getline(cin,tokens);
     parse(tokens);
