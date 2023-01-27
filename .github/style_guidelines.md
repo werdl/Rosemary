@@ -23,6 +23,6 @@ my_function(x,09); //Call my_function with x as the repeats and 09 as the max ti
 ###### NOT
 ```cpp
 int x = 1; // define integer x as 1
-cout << x << endl; // print x to std with a \\n character
+cout << x << endl; // print x to std with a \n character
 my_function(x,09); //my_func call
 ```
