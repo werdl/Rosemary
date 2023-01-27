@@ -12,7 +12,7 @@ if (x==y) {
 cout << "bad" << endl;
 }
 ```
-###### Comments
+##### Comments
 - Imagine you need to make this code understandable by somebody who doesn't know c++
 - But don't put them everywhere!
 ```cpp
