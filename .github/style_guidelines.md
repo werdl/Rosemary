@@ -3,7 +3,7 @@
 ##### Indentation
 ```cpp
 if (x==y) {
-	cout << "good" << endl;
+   cout << "good" << endl;
 }
 ```
 ###### NOT
