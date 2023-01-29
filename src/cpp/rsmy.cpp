@@ -9,13 +9,20 @@
 #include <fstream>
 #include "string.h"
 #include <fstream>
+#include "json.hpp"
 using std::cout; using std::cin;
 using std::endl; using std::string;
 using std::vector; using std::istringstream;
 using std::stringstream;
+using json = nlohmann::json;
 std::map<string, string> strings;
 std::map<string, int> ints;
 std::map<string, float> floats;
+json univars = json::parse(R"(
+  {
+    "DEFAULT UNI VAR":"HI"
+  }
+)");
 void loga(string call,bool success,string debug,string message) { // Log function takes 4 arguments, call (statement), success (bool saying whether or not the call was valid), debug (debugging info) and message(stuff form the compiler)
     // connect to file
     string filename("rsmy.log");
@@ -31,6 +38,9 @@ void thrftl(string debug,string message) {
 void nonftl(string debug,string message) {
     cout << "Non-Fatal runtime error occured - " << message;
     loga("null",0,"THREW FATAL ERROR",debug);
+}
+void newuni(string type,string name,string contents) {
+    
 }
 double eval(string expr)
 {
