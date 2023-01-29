@@ -16,7 +16,7 @@ using std::stringstream;
 std::map<string, string> strings;
 std::map<string, int> ints;
 std::map<string, float> floats;
-void loga(string call,bool success,string debug,string message) {
+void loga(string call,bool success,string debug,string message) { // Log function takes 4 arguments, call (statement), success (bool saying whether or not the call was valid), debug (debugging info) and message(stuff form the compiler)
     // connect to file
     string filename("rsmy.log");
     std::fstream file_out;
@@ -73,7 +73,6 @@ double eval(string expr)
         }
         tok += xxx[i];
     }
-
     for (int i = 0; i < tok.length(); i++)
     {
         if (tok[i] == '+')
@@ -107,12 +106,51 @@ double eval(string expr)
 void newvar(string varname,string value) {
     strings[varname]=value;
 }
-string getvar(string f1i) {
+string checkint(string f1i) { //check if int var of passed arg exists
+    auto iteri = ints.begin();
+            while (iteri != ints.end()) {
+        if (f1i==iteri->first) {
+            return std::__cxx11::to_string(iteri->second);
+            break;
+        }
+        ++iteri;
+    }
+    return "";
+}
+string checkfloat(string f1i) { //check if float var of passed arg exists
+    auto iterf = floats.begin();
+            while (iterf != floats.end()) {
+        if (f1i==iterf->first) {
+            return std::__cxx11::to_string(iterf->second);
+            break;
+        } else {
+            return "";
+        }
+        ++iterf;
+    }
+    return "";
+}
+string checkstring(string f1i) { //check if string var of passed arg exists
     auto iter = strings.begin();
             while (iter != strings.end()) {
         if (f1i==iter->first) {
             return iter->second;
             break;
+        } else {
+            return "";
+        }
+        ++iter;
+    }
+    return "";
+}
+string getvar(string f1i) { // Return variable based on the name given
+    auto iter = strings.begin();
+            while (iter != strings.end()) {
+        if (f1i==iter->first) {
+            return iter->second;
+            break;
+        } else {
+            return "";
         }
         ++iter;
     }
@@ -181,7 +219,8 @@ string f1,f1i,f3,f4i,f4,f5,f5i,f6,f6i;
 The above strings are the statement given, seperated into little chunks.
 f1 is the first char
 then 
-f1i is the 2nd - last chars*/
+f1i is the 2nd - last chars
+*/
     if (t==0) {}
     if (t>1) {  f1=tokens.substr(0,1);
            f1i=tokens.substr(1,tokens.length());}
@@ -197,7 +236,10 @@ f1i is the 2nd - last chars*/
             cout << f6i;
             cout <<endl;
 		}
-		else if (f3==intd && getvar(lex[2])=="") {
+		else if (f3==intd && checkfloat(lex[2])=="" && checkstring(lex[2])=="") {
+            if (!checkfloat(lex[2])=="" || !checkstring(lex[2])=="") {
+                nonftl("incorrect type","This variable already exists as another type. Try using a different name.")
+            }
             string zed=lex[4];
             char *hello=zed.data();
             int notint;
@@ -247,6 +289,9 @@ lex4.erase (std::remove(lex4.begin(), lex4.end(), chars[i]), lex4.end());
             cout << getvar(f1i);
             cout <<endl;
 ;        }
+        else if (lex[1]=="quit") {
+            exit(0);
+        }
     int place=0;
         while(1) {
             if (place>tokens.length()) {
