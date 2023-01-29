@@ -2,21 +2,8 @@
 #include <string>
 #include <limits.h>
 #include <iostream>
-
 using namespace std;
-int main()
-{
-    // var declarations
-    string cwd = ">";
-    bool shell = true;
-    string cmd = "exit";
-    string command;
-    while (shell==true) {
-        cout << cwd;
-        cin >> command;
-        if (command == cmd) {
-            shell=false;
-        }
-    }
-
+bool isfloat(const std::string& str) { char* ptr; strtof(str.c_str(), &ptr); return (*ptr) == '\0'; }
+int main() {
+    cout << isfloat("3");
 }

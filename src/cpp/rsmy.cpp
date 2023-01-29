@@ -174,6 +174,11 @@ string getvar(string f1i) { // Return variable based on the name given
     }
     return "";
 }
+bool isfloat(const std::string& str) { 
+    char* ptr; 
+    strtof(str.c_str(), &ptr); 
+    return (*ptr) == '\0'; 
+}
 void newint(string varname,int value) {
     ints[varname]=value;
 }
@@ -237,8 +242,8 @@ f1i is the 2nd - last chars
             cout <<endl;
 		}
 		else if (f3==intd && checkfloat(lex[2])=="" && checkstring(lex[2])=="") {
-            if (!checkfloat(lex[2])=="" || !checkstring(lex[2])=="") {
-                nonftl("incorrect type","This variable already exists as another type. Try using a different name.")
+            if (checkfloat(lex[2])!="" || checkstring(lex[2])!="") {
+                nonftl("incorrect type","This variable already exists as another type. Try using a different name.");
             }
             string zed=lex[4];
             char *hello=zed.data();
@@ -280,7 +285,7 @@ lex4.erase (std::remove(lex4.begin(), lex4.end(), chars[i]), lex4.end());
             newvar(lex[2],lex4); 
             
         }
-        else if (f5==floatd ) {
+        else if (f5==floatd && eval(lex[4])==1) {
             loga(tokens,1,"CALLED FLOAT FUNC","null");
             newfloat(lex[2],eval(lex[4])); 
         }
