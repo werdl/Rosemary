@@ -134,7 +134,7 @@ string getvar(string f1i) {
         }
         ++iterf;
     }
-    return "Variable " + f1i + " does not exist!";
+    return "";
 }
 void newint(string varname,int value) {
     ints[varname]=value;
@@ -176,7 +176,12 @@ tokens.erase (std::remove(tokens.begin(), tokens.end(), chars[i]), tokens.end())
 
 }
 int t = tokens.length();
-string f1,f1i,f3,f4i,f4,f5,f5i,f6,f6i;
+string f1,f1i,f3,f4i,f4,f5,f5i,f6,f6i; 
+/*
+The above strings are the statement given, seperated into little chunks.
+f1 is the first char
+then 
+f1i is the 2nd - last chars*/
     if (t==0) {}
     if (t>1) {  f1=tokens.substr(0,1);
            f1i=tokens.substr(1,tokens.length());}
@@ -192,37 +197,36 @@ string f1,f1i,f3,f4i,f4,f5,f5i,f6,f6i;
             cout << f6i;
             cout <<endl;
 		}
-		else if (f3==intd) {
-            
+		else if (f3==intd && getvar(lex[2])=="") {
             string zed=lex[4];
             char *hello=zed.data();
             int notint;
             int ints = 0;
             bool containsoper;
             for (int i = 0; i < strlen(hello); i++) {
-            if(isdigit(hello[i])) {
-                nothing();
-                notint=0;
-                ints++;
-            }
-            else if (hello[i]=='+'|| hello[i]=='-'|| hello[i]=='/'|| hello[i]=='*') {
-                containsoper=true;
-            }
-            else {
-                notint=1;
-            }
-            }
-            if (notint!=1 && ints!=0) {
-                newint(lex[2],stoi(lex[4])); 
-                loga(tokens,1,"CALLED INT SUCCESS, DECLARED "+lex[4],"SUCCESS");
-            } else {
-                string debugmsg=lex[4]+" is not an integer";
-                nonftl(debugmsg,"ValueError");
-                loga(tokens,0,"CALLED INT FUNC","null");
-                return;
+                if(isdigit(hello[i])) {
+                    nothing();
+                    notint=0;
+                    ints++;
+                }
+                else if (hello[i]=='+'|| hello[i]=='-'|| hello[i]=='/'|| hello[i]=='*') {
+                    containsoper=true;
+                }
+                else {
+                    notint=1;
+                }
+                }
+                if (notint!=1 && ints!=0) {
+                    newint(lex[2],stoi(lex[4])); 
+                    loga(tokens,1,"CALLED INT SUCCESS, DECLARED "+lex[4],"SUCCESS");
+                } else {
+                    string debugmsg=lex[4]+" is not an integer";
+                    nonftl(debugmsg,"ValueError");
+                    loga(tokens,0,"CALLED INT FUNC","null");
+                    return;
             }
         }
-        else if (f6==stringd) {
+        else if (f6==stringd && getvar(lex[2])=="") {
             string lex4=lex[4];
             for (unsigned int i = 0; i < strlen(chars); ++i)
 
@@ -234,7 +238,7 @@ lex4.erase (std::remove(lex4.begin(), lex4.end(), chars[i]), lex4.end());
             newvar(lex[2],lex4); 
             
         }
-        else if (f5==floatd) {
+        else if (f5==floatd ) {
             loga(tokens,1,"CALLED FLOAT FUNC","null");
             newfloat(lex[2],eval(lex[4])); 
         }
@@ -261,10 +265,10 @@ lex4.erase (std::remove(lex4.begin(), lex4.end(), chars[i]), lex4.end());
                 }
             }
             try {
-            cout << eval(to_eval)<<endl;
-            string error="Evaluation Error!";
-            throw to_eval;
-            string z=to_eval;
+                cout << eval(to_eval)<<endl;
+                string error="Evaluation Error!";
+                throw to_eval;
+                string z=to_eval;
             } catch(string to_eval) {
                 nonftl("Evaluation Error",to_eval);
                 return;
