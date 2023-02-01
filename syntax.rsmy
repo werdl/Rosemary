@@ -1,4 +1,3 @@
-
 class construct(string name, float rand) {
   func __init__() {
     print "init";
