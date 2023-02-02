@@ -9,8 +9,10 @@
 - I'll try and fix that.
 ## Web Files Now Found [here](http://github.com/gonerogueproductions/rsmy-web)
 ## Why use Rosemary?
-- idk
-- general purpose?
+- Powerful and yet simple, Rosemary is easy to learn
+- If you're a JS, C family, PHP or Ruby developer, learning Rosemary is easy!
+- Simple syntax, but with the power of C at your fingertips
+- Speed
 ## Plans for the project
 - Change from Python to C++ for performance ✅
 - I'll write my own interpreter, I won't use
@@ -26,7 +28,7 @@ as I can, but you have to be careful with syntax,
 in case catch clause is missing
 - If you want to help, great! Make a pull request
 or an issue or whatever :)
-- Enjoy (or at least try lol)
+- Enjoy
 ## Next Steps
 - Tokenisation ✅
 - Print ✅
