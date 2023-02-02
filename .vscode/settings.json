@@ -60,7 +60,17 @@
         "numeric": "cpp",
         "random": "cpp",
         "string_view": "cpp",
-        "numbers": "cpp"
+        "numbers": "cpp",
+        "any": "cpp",
+        "codecvt": "cpp",
+        "ctime": "cpp",
+        "forward_list": "cpp",
+        "optional": "cpp",
+        "ratio": "cpp",
+        "iomanip": "cpp",
+        "ranges": "cpp",
+        "span": "cpp",
+        "valarray": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

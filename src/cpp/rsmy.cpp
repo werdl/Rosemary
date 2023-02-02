@@ -18,11 +18,7 @@ using json = nlohmann::json;
 std::map<string, string> strings;
 std::map<string, int> ints;
 std::map<string, float> floats;
-json univars = json::parse(R"(
-  {
-    "DEFAULT UNI VAR":"HI"
-  }
-)");
+std::map<string,string> univars;
 void loga(string call,bool success,string debug,string message) { // Log function takes 4 arguments, call (statement), success (bool saying whether or not the call was valid), debug (debugging info) and message(stuff form the compiler)
     // connect to file
     string filename("rsmy.log");
@@ -40,7 +36,15 @@ void nonftl(string debug,string message) {
     loga("null",0,"THREW FATAL ERROR",debug);
 }
 void newuni(string type,string name,string contents) {
-    
+    univars[name]=contents;
+}
+string getuni(string name) {
+    string s2 = univars[name];
+    if (s2!="") {
+    return s2;
+    } else {
+        return "";
+    }
 }
 double eval(string expr)
 {
@@ -182,6 +186,15 @@ string getvar(string f1i) { // Return variable based on the name given
         }
         ++iterf;
     }
+
+     auto iterg = univars.begin();
+            while (iterg != univars.end()) {
+        if (f1i==iterg->first) {
+            return iterg->second;
+            break;
+        }
+        ++iterg;
+    }
     return "";
 }
 bool isfloat(const std::string& str) { 
@@ -306,6 +319,9 @@ lex4.erase (std::remove(lex4.begin(), lex4.end(), chars[i]), lex4.end());
 ;        }
         else if (lex[1]=="quit") {
             exit(0);
+        }
+        else if (lex[1]=="uni") {
+            newuni("",lex[2],lex[4]);
         }
     int place=0;
         while(1) {
