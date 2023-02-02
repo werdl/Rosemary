@@ -1,4 +1,10 @@
-# Rosemary
+# .______        ______        _______. _______ .___  ___.      ___      .______     ____    ____ 
+|   _  \      /  __  \      /       ||   ____||   \/   |     /   \     |   _  \    \   \  /   / 
+|  |_)  |    |  |  |  |    |   (----`|  |__   |  \  /  |    /  ^  \    |  |_)  |    \   \/   /  
+|      /     |  |  |  |     \   \    |   __|  |  |\/|  |   /  /_\  \   |      /      \_    _/   
+|  |\  \----.|  `--'  | .----)   |   |  |____ |  |  |  |  /  _____  \  |  |\  \----.   |  |     
+| _| `._____| \______/  |_______/    |_______||__|  |__| /__/     \__\ | _| `._____|   |__|     
+                                                                                                
 ## Like Python, but with brackets. 
 - Basically: strongly typed, mix of python perl and php syntax
 - It uses {} rather than indentation, as I think it allows for more options.
