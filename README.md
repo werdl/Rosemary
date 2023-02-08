@@ -49,7 +49,7 @@ or an issue or whatever :)
 - Print ✅
 - Variables ✅
 - Operands ✅
-- IF ELIF ELSE ❎
+- IF ELIF ELSE ❎ (I think I have a method I just need to implement it)
 - WHILE FOR FOREACH ❎
 - TRY CATCH ❎
 - Sprig Package Manager ✅ [find it here](http://github.com/gonerogueproductions/Sprig)
