@@ -6,6 +6,5 @@ IF %INPUT%==null (%INPUT%=%UserProfile%+'rsmy')
 setx rsmypath %INPUT%
 curl https://raw.githubusercontent.com/TheRosemaryProject/Rosemary/main/src/cpp/rsmy.exe > %INPUT%+'/rsmy.exe'
 curl https://raw.githubusercontent.com/TheRosemaryProject/Sprig/main/sprig.exe > %INPUT%+'/sprig.exe'
-curl https://raw.githubusercontent.com/TheRosemaryProject/Sprig/main/json.hpp > %INPUT%+'/json.hpp'
 setx path "%path%;%INPUT%"
 rsmy
