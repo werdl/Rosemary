@@ -17,10 +17,10 @@
 - I'll try and fix that.
 ## Installation
 #### Windows
-- `curl https://raw.githubusercontent.com/TheRosemaryProject/Rosemary/main/install.bat`
+- `curl https://raw.githubusercontent.com/TheRosemaryProject/Rosemary/main/install.bat > install.bat`
 - `.\install`
 #### Unix based and OS X
-- `curl https://raw.githubusercontent.com/TheRosemaryProject/Rosemary/main/install.sh`
+- `curl https://raw.githubusercontent.com/TheRosemaryProject/Rosemary/main/install.sh > install.sh`
 - `chmod +x install.sh`
 - `.\install`
 ## Why use Rosemary?
