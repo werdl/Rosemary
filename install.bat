@@ -16,7 +16,7 @@ echo [~~~-------]
 ping -n 2 localhost  >nul
 cls
 echo [~~~~------]
-curl https://raw.githubusercontent.com/TheRosemaryProject/Rosemary/main/src/cpp/rsmy.exe > %INPUT%+'/rsmy.exe'
+curl https://raw.githubusercontent.com/TheRosemaryProject/Rosemary/main/src/cpp/rsmy.exe > %INPUT%+/rsmy.exe
 ping -n 2 localhost  >nul
 cls
 echo [~~~~~-----]
@@ -29,7 +29,7 @@ echo [~~~~~~~---]
 ping -n 2 localhost  >nul
 cls
 echo [~~~~~~~~--]
-curl https://raw.githubusercontent.com/TheRosemaryProject/Sprig/main/sprig.exe > %INPUT%+'/sprig.exe'
+curl https://raw.githubusercontent.com/TheRosemaryProject/Sprig/main/sprig.exe > %INPUT%+/sprig.exe
 ping -n 2 localhost  >nul
 cls
 echo [~~~~~~~~~-]
