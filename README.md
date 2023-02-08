@@ -15,7 +15,14 @@
 - .rsmy - Rosemary file
 - Error checking is pretty good right now, not
 - I'll try and fix that.
-## Web Files Now Found [here](http://github.com/gonerogueproductions/rsmy-web)
+## Installation
+#### Windows
+- `curl Https://placeholder`
+- `.\install`
+#### Unix based and OS X
+- `curl https://placeholder`
+- `chmod +x install.sh`
+- `.\install`
 ## Why use Rosemary?
 - Powerful and yet simple, Rosemary is easy to learn
 - If you're a JS, C family, PHP or Ruby developer, learning Rosemary is easy!
