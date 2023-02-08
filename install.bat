@@ -3,7 +3,7 @@ title Installing Rosemary
 set /p INPUT= Install Directory: 
 IF %INPUT%=="" (echo Installing In %cd%/rsmy) 
 IF %INPUT%=="" (mkdir rsmy)
-IF %INPUT%=="" (%INPUT%=%UserProfile%+'rsmy')
+IF %INPUT%=="" (%INPUT%=%UserProfile%+'/rsmy')
 setx rsmypath %INPUT%
 setx path "%path%;%INPUT%"
 echo [~---------]
