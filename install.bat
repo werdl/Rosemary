@@ -37,5 +37,6 @@ echo [~~~~~~~~~~]
 echo Installed!
 echo Booting into your first session! :)
 rsmy
-ping -n 5 localhost  >nul
-exit /b
+::NOW
+::ITS
+::42 LINES! :)
