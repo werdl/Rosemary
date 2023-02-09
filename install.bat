@@ -37,7 +37,5 @@ echo [~~~~~~~~~~]
 echo Installed!
 echo Booting into your first session! :)
 rsmy
-:error 
-echo x=msgbox ("An error occured - better luck next time!" ,0, "title")
 ping -n 5 localhost  >nul
 exit /b
