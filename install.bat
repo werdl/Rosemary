@@ -6,6 +6,7 @@ IF %INPUT%=="" {mkdir rsmy}
 IF %INPUT%=="" {%INPUT%=%cd%+/rsmy}
 setx rsmypath %INPUT%
 setx path "%path%;%INPUT%"
+cd %INPUT%
 echo [~---------]
 ping -n 2 localhost >nul
 cls
@@ -16,7 +17,7 @@ echo [~~~-------]
 ping -n 2 localhost  >nul
 cls
 echo [~~~~------]
-curl https://raw.githubusercontent.com/TheRosemaryProject/Rosemary/main/src/cpp/rsmy.exe > %INPUT%+/rsmy.exe
+curl -o https://raw.githubusercontent.com/TheRosemaryProject/Rosemary/main/src/cpp/rsmy.exe 
 ping -n 2 localhost  >nul
 cls
 echo [~~~~~-----]
@@ -29,7 +30,7 @@ echo [~~~~~~~---]
 ping -n 2 localhost  >nul
 cls
 echo [~~~~~~~~--]
-curl https://raw.githubusercontent.com/TheRosemaryProject/Sprig/main/sprig.exe > %INPUT%+/sprig.exe
+curl -o https://raw.githubusercontent.com/TheRosemaryProject/Sprig/main/sprig.exe > %INPUT%+/sprig.exe
 ping -n 2 localhost  >nul
 cls
 echo [~~~~~~~~~-]
@@ -40,3 +41,7 @@ echo [~~~~~~~~~~]
 echo Installed!
 echo Booting into your first session! :)
 rsmy
+:error 
+echo x=msgbox ("An error occured - better luck next time!" ,0, "title")
+ping -n 5 localhost  >nul
+exit /b
