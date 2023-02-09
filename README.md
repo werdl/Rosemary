@@ -17,7 +17,7 @@
 - I'll try and fix that.
 ## Installation
 #### Windows
-- `curl -o https://raw.githubusercontent.com/TheRosemaryProject/Rosemary/main/install.bat`
+- `curl https://raw.githubusercontent.com/TheRosemaryProject/Rosemary/main/install.bat -o install.bat`
 - `.\install`
 #### Unix based and OS X
 - `curl https://raw.githubusercontent.com/TheRosemaryProject/Rosemary/main/install.sh > install.sh`
