@@ -1,12 +1,8 @@
 @ECHO off
 title Installing Rosemary
-set /p INPUT= Install Directory: 
-IF %INPUT%=="" {echo Installing In %cd%/rsmy}
-IF %INPUT%=="" {mkdir rsmy}
-IF %INPUT%=="" {%INPUT%=%cd%+/rsmy}
-setx rsmypath %INPUT%
-setx path "%path%;%INPUT%"
-cd %INPUT%
+echo Installing in %cd%/rsmy
+setx rsmypath %cd%/rsmy
+setx path "%path%;%INPUT%"cd%/rsmy
 echo [~---------]
 ping -n 2 localhost >nul
 cls
