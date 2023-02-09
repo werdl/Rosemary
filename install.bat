@@ -3,7 +3,8 @@ title Installing Rosemary
 echo Installing in %cd%/rsmy
 setx rsmypath %cd%/rsmy
 setx path "%path%;%cd%/rsmy"
-cd %cd%/rsmy
+mkdir rsmy
+cd rsmy
 echo [~---------]
 ping -n 2 localhost >nul
 cls
