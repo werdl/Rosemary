@@ -15,6 +15,7 @@
 - .rsmy - Rosemary file
 - Error checking is pretty good right now, not
 - I'll try and fix that.
+- Notepad++ syntax highlighting in rosemary-npp-extension.xml !
 ## Installation
 #### Windows
 - `curl https://raw.githubusercontent.com/TheRosemaryProject/Rosemary/main/install.bat -o install.bat`
