@@ -6,13 +6,13 @@ setx path "%path%;%cd%/rsmy"
 mkdir rsmy
 cd rsmy
 echo [~---------]
-ping -n 3 localhost >nul
+ping -n 1 localhost >nul
 cls
 echo [~~--------]
-ping -n 3 localhost  >nul
+ping -n 1 localhost  >nul
 cls
 echo [~~~-------]
-ping -n 3 localhost  >nul
+ping -n 1 localhost  >nul
 cls
 echo [~~~~------]
 echo "Installing Rosemary shell..."
@@ -21,13 +21,13 @@ echo Done"
 ping -n 3 localhost  >nul
 cls
 echo [~~~~~-----]
-ping -n 3 localhost  >nul
+ping -n 1 localhost  >nul
 cls
 echo [~~~~~~----]
-ping -n 3 localhost  >nul
+ping -n 1 localhost  >nul
 cls
 echo [~~~~~~~---]
-ping -n 3 localhost  >nul
+ping -n 1 localhost  >nul
 cls
 echo [~~~~~~~~--]
 echo "Installing Rosemary package manager"
@@ -36,7 +36,7 @@ echo Done"
 ping -n 3 localhost  >nul
 cls
 echo [~~~~~~~~~-]
-ping -n 3 localhost >nul
+ping -n 1 localhost >nul
 echo "you are fast at reading"
 cls
 echo [~~~~~~~~~~]
