@@ -15,12 +15,15 @@
 - .rsmy - Rosemary file
 - Error checking is pretty good right now, not
 - I'll try and fix that.
-- Notepad++ syntax highlighting in rosemary-npp-extension.xml !
 ## Installation
 #### Windows
 - `curl https://raw.githubusercontent.com/TheRosemaryProject/Rosemary/main/install.bat -o install.bat;.\install`
 #### Unix based and OS X
 - `curl https://raw.githubusercontent.com/TheRosemaryProject/Rosemary/main/install.sh > install.sh;chmod +x install.sh;sh install.sh`
+## Syntax Highlighting
+### Notepad++
+<img src="https://user-images.githubusercontent.com/116349156/218162627-e65864e7-f10c-470d-8b42-9c8c223a0f3b.png" height=500 ></img>
+<img src="https://user-images.githubusercontent.com/116349156/218162654-0a1f3c00-b189-4aae-97f8-c2f2b7caa467.png" height=500 ></img>
 ## Why use Rosemary?
 - Powerful and yet simple, Rosemary is easy to learn
 - If you're a JS, C family, PHP or Ruby developer, learning Rosemary is easy!
