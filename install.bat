@@ -6,39 +6,40 @@ setx path "%path%;%cd%/rsmy"
 mkdir rsmy
 cd rsmy
 echo [~---------]
-ping -n 2 localhost >nul
+ping -n 3 localhost >nul
 cls
 echo [~~--------]
-ping -n 2 localhost  >nul
+ping -n 3 localhost  >nul
 cls
 echo [~~~-------]
-ping -n 2 localhost  >nul
+ping -n 3 localhost  >nul
 cls
 echo [~~~~------]
+echo "Installing Rosemary shell..."
 curl  https://raw.githubusercontent.com/TheRosemaryProject/Rosemary/main/src/cpp/rsmy.exe -o rsmy.exe
-ping -n 2 localhost  >nul
+echo Done"
+ping -n 3 localhost  >nul
 cls
 echo [~~~~~-----]
-ping -n 2 localhost  >nul
+ping -n 3 localhost  >nul
 cls
 echo [~~~~~~----]
-ping -n 2 localhost  >nul
+ping -n 3 localhost  >nul
 cls
 echo [~~~~~~~---]
-ping -n 2 localhost  >nul
+ping -n 3 localhost  >nul
 cls
 echo [~~~~~~~~--]
+echo "Installing Rosemary package manager"
 curl  https://raw.githubusercontent.com/TheRosemaryProject/Sprig/main/sprig.exe -o sprig.exe
-ping -n 2 localhost  >nul
+echo Done"
+ping -n 3 localhost  >nul
 cls
 echo [~~~~~~~~~-]
-ping -n 2 localhost >nul
+ping -n 3 localhost >nul
 echo "you are fast at reading"
 cls
 echo [~~~~~~~~~~]
 echo Installed!
 echo Booting into your first session! :)
-rsmy
-::NOW
-::ITS
-::42 LINES! :)
+.\rsmy.exe
