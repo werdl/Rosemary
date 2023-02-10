@@ -18,12 +18,9 @@
 - Notepad++ syntax highlighting in rosemary-npp-extension.xml !
 ## Installation
 #### Windows
-- `curl https://raw.githubusercontent.com/TheRosemaryProject/Rosemary/main/install.bat -o install.bat`
-- `.\install`
+- `curl https://raw.githubusercontent.com/TheRosemaryProject/Rosemary/main/install.bat -o install.bat;.\install`
 #### Unix based and OS X
-- `curl https://raw.githubusercontent.com/TheRosemaryProject/Rosemary/main/install.sh > install.sh`
-- `chmod +x install.sh`
-- `.\install`
+- `curl https://raw.githubusercontent.com/TheRosemaryProject/Rosemary/main/install.sh > install.sh;chmod +x install.sh;sh install.sh`
 ## Why use Rosemary?
 - Powerful and yet simple, Rosemary is easy to learn
 - If you're a JS, C family, PHP or Ruby developer, learning Rosemary is easy!
