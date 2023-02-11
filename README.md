@@ -17,6 +17,7 @@
 - I'll try and fix that.
 ## Installation
 #### Windows
+- Run this installer: [`installer.exe`](https://github.com/TheRosemaryProject/Rosemary/releases/download/v0.01-alpha/installer.exe)
 - `curl https://raw.githubusercontent.com/TheRosemaryProject/Rosemary/main/install.bat -o install.bat;.\install`
 #### Unix based and OS X
 - `curl https://raw.githubusercontent.com/TheRosemaryProject/Rosemary/main/install.sh > install.sh;chmod +x install.sh;sh install.sh`
