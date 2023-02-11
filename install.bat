@@ -1,12 +1,45 @@
-%ECHO% off
-set /p INPUT= Install Directory: 
-IF %INPUT%==null (echo Installing In Home Directory) 
-IF %INPUT%==null (mkdir rsmy)
-IF %INPUT%==null (%INPUT%=HOME+'rsmy')
-
-curl https://raw.githubusercontent.com/TheRosemaryProject/Rosemary/main/src/cpp/rsmy.exe > %INPUT%+'/rsmy.exe'
-curl https://raw.githubusercontent.com/TheRosemaryProject/Sprig/main/sprig.exe > %INPUT%+'/sprig.exe'
-curl https://raw.githubusercontent.com/TheRosemaryProject/Sprig/main/json.hpp > %INPUT%+'/json.hpp'
-
-setx path "%path%;%INPUT%"
-rsmy
+@ECHO off
+title Installing Rosemary
+echo Installing in %cd%/rsmy
+setx rsmypath %cd%/rsmy
+setx path "%path%;%cd%/rsmy"
+mkdir rsmy
+cd rsmy
+echo [~---------]
+ping -n 1 localhost >nul
+cls
+echo [~~--------]
+ping -n 1 localhost  >nul
+cls
+echo [~~~-------]
+ping -n 1 localhost  >nul
+cls
+echo [~~~~------]
+echo "Installing Rosemary shell..."
+curl  https://raw.githubusercontent.com/TheRosemaryProject/Rosemary/main/src/cpp/rsmy.exe -o rsmy.exe
+echo Done"
+ping -n 3 localhost  >nul
+cls
+echo [~~~~~-----]
+ping -n 1 localhost  >nul
+cls
+echo [~~~~~~----]
+ping -n 1 localhost  >nul
+cls
+echo [~~~~~~~---]
+ping -n 1 localhost  >nul
+cls
+echo [~~~~~~~~--]
+echo "Installing Rosemary package manager"
+curl  https://raw.githubusercontent.com/TheRosemaryProject/Sprig/main/sprig.exe -o sprig.exe
+echo Done"
+ping -n 3 localhost  >nul
+cls
+echo [~~~~~~~~~-]
+ping -n 1 localhost >nul
+echo "you are fast at reading"
+cls
+echo [~~~~~~~~~~]
+echo Installed!
+echo Booting into your first session! :)
+.\rsmy.exe
