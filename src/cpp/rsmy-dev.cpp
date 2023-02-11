@@ -22,15 +22,6 @@
     bool freebsd=true;
     bool linux,windows=false;
 #endif
-// #
-//     cout << "I DONT KNOW YOUR OS";
-//     cout << endl << "sorry" <<endl;
-//     cout << endl << "Try with BASH? 1 or 0" <<endl;
-//     cin >> input;
-//     if (input=="1") {
-//          inux=true;
-//     }
-// #endif
 using std::cout; using std::cin;
 using std::endl; using std::string;
 using std::vector; using std::istringstream;
