@@ -1,4 +1,5 @@
 @ECHO off
+color B1
 title Installing Rosemary
 echo Installing in %cd%/rsmy
 setx rsmypath %cd%/rsmy
