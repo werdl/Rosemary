@@ -7,3 +7,4 @@ bool isfloat(const std::string& str) { char* ptr; strtof(str.c_str(), &ptr); ret
 int main() {
     cout << isfloat("3");
 }
+                                                              

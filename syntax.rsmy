@@ -1,4 +1,4 @@
-class construct(string name, float rand) {
+class construct(string name , float rand) {
   func __init__() {
     print "init";
     print $name;
@@ -6,29 +6,56 @@ class construct(string name, float rand) {
   }
   func hiwrld() {
     string prompt = "Enter a string";
-    input(string userInput,$prompt);
+    input ~ string userInput , $prompt;
     print $userInput;
     bool good = false;
-    while ($good==false) {
+    while ($good == false) {
       try {
-        input(string userBoolean,"Enter a boolean value");
-        $good=true;
+        input ~ string userBoolean "Enter a boolean value";
+        $good = true;
       }
-      catch WrongType {
+      catch $userBoolean.WrongType {
         print "Ensure it is boolean!";
-        $good=false;
+        $good = false;
       }
     }
     print $userBoolean;
   }
 }
-int x;
-for ($x++,$x<5) {
+int x = 0;
+for ($x++ , $x <= 5) {
   print "hi";
 }
 string namez = "foo";
 float random = 1.618;
-classtest = new construct(namez,random);
+classtest = new construct $namez , $random;
 classtest.hiwrld();
 # EOF
+/* EOF */
 return 0;
+
+
+
+if (){
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

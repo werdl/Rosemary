@@ -10,15 +10,71 @@
 #include "string.h"
 #include <fstream>
 #include "json.hpp"
+#if __linux__ || __APPLE__ || __ANDROID__
+     bool linux=true;
+     bool windows,freebsd=false;
+#endif
+#if _WIN32
+    bool windows=true;
+    bool linux,freebsd=false;
+#endif
+#if __FreeBSD__
+    bool freebsd=true;
+    bool linux,windows=false;
+#endif
+// #
+//     cout << "I DONT KNOW YOUR OS";
+//     cout << endl << "sorry" <<endl;
+//     cout << endl << "Try with BASH? 1 or 0" <<endl;
+//     cin >> input;
+//     if (input=="1") {
+//          inux=true;
+//     }
+// #endif
 using std::cout; using std::cin;
 using std::endl; using std::string;
 using std::vector; using std::istringstream;
-using std::stringstream;
+using std::stringstream; using std::ofstream;using std::ifstream;
 using json = nlohmann::json;
 std::map<string, string> strings;
 std::map<string, int> ints;
 std::map<string, float> floats;
 std::map<string,string> univars;
+
+bool upgrade() {
+    if (windows) {
+        system("cd %rsmypath%");
+        system("del rsmy.exe");
+        system("del sprig.exe");
+        system("curl https://raw.githubusercontent.com/TheRosemaryProject/Rosemary/main/install.bat -o reinstall.bat");
+        system(".\\reinstall");
+        return 0;
+    }
+    else if (linux) {
+        system("rm -Force %rsmypath%/rsmy.exe");
+        system("rm -Force %rsmypath%/sprig.exe");
+        system("curl https://raw.githubusercontent.com/TheRosemaryProject/Rosemary/main/install.sh -o reinstall.sh");
+        system("chmod +x reinstall.sh");
+        system(".\\reinstall"); return 0;
+    } 
+    else if (freebsd) {
+        cout << "RESPECT TO YOU USER, for installing rsmy on freebsd. I didn't code the full works for freebsd :( sorry updates have to be manual (i dont have bsd partition)";
+        cout << endl << "If you type 1, update will attempt with BASH" <<endl;
+        string input;
+        cin >> input;
+        if (input=="1") {
+            system("rm -Force %rsmypath%/rsmy.exe");
+            system("rm -Force %rsmypath%/sprig.exe");
+            system("https://raw.githubusercontent.com/TheRosemaryProject/Rosemary/main/install.sh -o reinstall.sh");
+            system("chmod +x reinstall.sh");
+            system(".\\reinstall"); return 0;
+        }
+    }
+    else {
+        cout <<"Your OS not recognised";
+        return 1;
+    } return 1;
+}
 void loga(string call,bool success,string debug,string message) { // Log function takes 4 arguments, call (statement), success (bool saying whether or not the call was valid), debug (debugging info) and message(stuff form the compiler)
     // connect to file
     string filename("rsmy.log");
@@ -36,15 +92,32 @@ void nonftl(string debug,string message) {
     loga("null",0,"THREW FATAL ERROR",debug);
 }
 void newuni(string type,string name,string contents) {
-    univars[name]=contents;
+    ofstream MyFile(name+".rsmyuni");
+
+  // Write to the file
+  MyFile << "Files can be tricky, but it is fun enough!";
+
+  // Close the file
+  MyFile.close();
 }
+
 string getuni(string name) {
-    string s2 = univars[name];
-    if (s2!="") {
-    return s2;
-    } else {
-        return "";
-    }
+    string myText;
+
+// Read from the text file
+ifstream MyReadFile(name+".rsmyuni");
+
+// Use a while loop together with the getline() function to read the file line by line
+while (getline (MyReadFile, myText)) {
+  // Output the text from the file
+  cout << myText;
+}
+
+// Close the file
+MyReadFile.close();
+
+// Close the file
+return ";";
 }
 double eval(string expr)
 {
@@ -186,15 +259,6 @@ string getvar(string f1i) { // Return variable based on the name given
         }
         ++iterf;
     }
-
-     auto iterg = univars.begin();
-            while (iterg != univars.end()) {
-        if (f1i==iterg->first) {
-            return iterg->second;
-            break;
-        }
-        ++iterg;
-    }
     return "";
 }
 bool isfloat(const std::string& str) { 
@@ -220,6 +284,7 @@ void parse(string tokens) {
     string floatd = "float";
     string bob = "view";
     string dollr = "$";
+    string dollr2 = "&";
     string eval2 = "?";
     int x=0;
     string lex[100];
@@ -323,6 +388,9 @@ lex4.erase (std::remove(lex4.begin(), lex4.end(), chars[i]), lex4.end());
         else if (lex[1]=="uni") {
             newuni("",lex[2],lex[4]);
         }
+        else if (lex[1]==dollr2) {
+            getuni(f1i);
+        }
     int place=0;
         while(1) {
             if (place>tokens.length()) {
@@ -385,8 +453,12 @@ int main(int argc, char** argv){
     for (int i = 0; i < argc; ++i) {
         e2[i]=argv[i];
     }   
+    string update="--update";
     string checkfor="";
-    if (1) {
+    if (e2[1]==update) {
+        upgrade();
+    }
+    if (e2[1]=="") {
     while (1) {
     cout << "$~>";
     string tokens;
