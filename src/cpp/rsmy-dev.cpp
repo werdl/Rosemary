@@ -10,18 +10,7 @@
 #include "string.h"
 #include <fstream>
 #include "json.hpp"
-#if __linux__ || __APPLE__ || __ANDROID__
-     bool linux=true;
-     bool windows,freebsd=false;
-#endif
-#if _WIN32
-    bool windows=true;
-    bool linux,freebsd=false;
-#endif
-#if __FreeBSD__
-    bool freebsd=true;
-    bool linux,windows=false;
-#endif
+
 using std::cout; using std::cin;
 using std::endl; using std::string;
 using std::vector; using std::istringstream;
@@ -33,22 +22,22 @@ std::map<string, float> floats;
 std::map<string,string> univars;
 
 bool upgrade() {
-    if (windows) {
+    #if _WIN32
         system("cd %rsmypath%");
         system("del rsmy.exe");
         system("del sprig.exe");
         system("curl https://raw.githubusercontent.com/TheRosemaryProject/Rosemary/main/install.bat -o reinstall.bat");
         system(".\\reinstall");
         return 0;
-    }
-    else if (linux) {
+    #endif
+    #if __linux__ || __APPLE__ || __ANDROID__
         system("rm -Force %rsmypath%/rsmy.exe");
         system("rm -Force %rsmypath%/sprig.exe");
         system("curl https://raw.githubusercontent.com/TheRosemaryProject/Rosemary/main/install.sh -o reinstall.sh");
         system("chmod +x reinstall.sh");
         system(".\\reinstall"); return 0;
-    } 
-    else if (freebsd) {
+   #endif
+    #if __FreeBSD__
         cout << "RESPECT TO YOU USER, for installing rsmy on freebsd. I didn't code the full works for freebsd :( sorry updates have to be manual (i dont have bsd partition)";
         cout << endl << "If you type 1, update will attempt with BASH" <<endl;
         string input;
@@ -60,11 +49,8 @@ bool upgrade() {
             system("chmod +x reinstall.sh");
             system(".\\reinstall"); return 0;
         }
-    }
-    else {
-        cout <<"Your OS not recognised";
-        return 1;
-    } return 1;
+    #endif
+ return 1;
 }
 void loga(string call,bool success,string debug,string message) { // Log function takes 4 arguments, call (statement), success (bool saying whether or not the call was valid), debug (debugging info) and message(stuff form the compiler)
     // connect to file
@@ -325,7 +311,7 @@ f1i is the 2nd - last chars
                 nonftl("incorrect type","This variable already exists as another type. Try using a different name.");
             }
             string zed=lex[4];
-            char *hello=zed.data();
+            const char *hello=zed.data();
             int notint;
             int ints = 0;
             bool containsoper;
