@@ -32,7 +32,7 @@ ping -n 1 localhost  >nul
 cls
 echo [~~~~~~~~--]
 echo "Installing Rosemary package manager"
-curl  https://raw.githubusercontent.com/TheRosemaryProject/Sprig/main/sprig.exe -o sprig.exe
+curl  https://raw.githubusercontent.com/TheRosemaryProject/Rosemary/main/src/sprig/sprig.exe -o sprig.exe
 echo Done"
 ping -n 3 localhost  >nul
 cls
