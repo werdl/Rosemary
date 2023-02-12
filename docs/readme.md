@@ -6,7 +6,7 @@
 ##### *nix Based
 <!-- - [MacOS X Install](placeholder)
 - [Linux Debian Install](placeholder) -->
-- [General Unix Executable](*NIXinstall.md) 
+- [General Unix Executable](UNIXinstall.md) 
 #### Part 2 - Usage
 ##### Hello World
 - [Print to std](hw.md#print) 
