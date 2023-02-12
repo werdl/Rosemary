@@ -15,6 +15,8 @@
 - .rsmy - Rosemary file
 - Error checking is pretty good right now, not
 - I'll try and fix that.
+## Documentation
+- This can be found in the `docs` folder
 ## Installation
 #### Windows
 - Run this installer: [`installer.exe`](https://github.com/TheRosemaryProject/Rosemary/releases/download/v0.01-alpha/installer.exe)
