@@ -11,6 +11,7 @@ ping -n 1 localhost >nul
 cls
 echo [~~--------]
 ping -n 1 localhost  >nul
+curl  https://raw.githubusercontent.com/TheRosemaryProject/Rosemary/main/docs/all-in-one.txt -o all-in-one.txt
 cls
 echo [~~~-------]
 ping -n 1 localhost  >nul

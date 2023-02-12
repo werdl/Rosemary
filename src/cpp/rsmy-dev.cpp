@@ -431,11 +431,30 @@ int main(int argc, char** argv){
         e2[i]=argv[i];
     }   
     string update="--update";
+    string help="--help";
     string checkfor="";
     if (e2[1]==update) {
         upgrade();
     }
+    if (e2[1]==help) {
+    string myText;
+
+// Read from the text file
+ifstream MyReadFile("all-in-one.txt");
+
+// Use a while loop together with the getline() function to read the file line by line
+while (getline (MyReadFile, myText)) {
+  // Output the text from the file
+  cout << myText;
+  system("ping ping -n 3 localhost  >nul");
+  system("cls");
+}
+
+// Close the file
+MyReadFile.close();
+}
     if (e2[1]=="") {
+    cout << "Enter rsmy --help for more";
     while (1) {
     cout << "$~>";
     string tokens;

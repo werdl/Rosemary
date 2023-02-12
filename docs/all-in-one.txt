@@ -1,0 +1,117 @@
+                                                                                                                                                           
+WINDOWS INSTALL                                                                                                                                                            
+Simple
+- Run this command: 
+curl https://github.com/TheRosemaryProject/Rosemary/blob/main/install.bat > install.bat
+- And then 
+./install
+- And Rosemary and Sprig are now installed!
+Unix Install
+Simple
+- Run this command: 
+curl https://github.com/TheRosemaryProject/Rosemary/blob/main/install.sh > install.sh
+- And then 
+chmod +x install.sh
+- Then finally 
+./install
+- And Rosemary and Sprig are now installed!
+Hello World                                                                                       
+Print to STD
+print hello, world
+- You don't need quotes, but you can use them and they will be stripped from the string
+Variables
+- In Rosemary, you use a statically typed system
+- We borrowed and simplified some C++ types
+- To create a variable, use
+int x = 3;
+- Note the spaces, these are important.
+- Now to view a variable and print to STD
+$x
+- Which will return 
+$~> $x
+3
+$~>
+Types
+- List of types:
+- int
+- string
+- float
+- bool
+IDES 
+VS Code
+- Search for 'Rosemary' in the extensions tab (NOT DONE YET)
+- Open up a new file ending in .rsmy
+- Write your code
+- Then in the shell window run
+rsmy filename.rsmy
+Notepad and system editors
+- Write your code
+- Then run the scripts above in a terminal window
+In a terminal window
+- Run rsmy with no arguments
+rsmy
+- This will launch a shell, like so
+$~>
+- You can then enter your commands at the `$~>` prompt
+Logs and Errors 
+Logs
+- Whenever you run a file, Rosemary will log your command in `rsmy.log`
+- You can use this for error checking and advanced debugging
+- It will be logged in the following format:
+Call was <call> Success: <1 or 0> Debug info: <debuginfo> Any messages: <messages>
+- Each entry will have a newline
+Errors
+- When you run a Rosemary file, there may be some errors.
+- These will be logged to rsmy.log
+- Common errors include:
+TypeError - Incorrect type supplied
+SyntaxError - Syntax is wrong
+CompileError - Your compiler isn't working
+RunTimeError - An error occurred on the fly
+KeyboardInterrupt You pressed Ctrl+Shift+Esc to end the process
+Debugging guide
+`TypeError You have supplied the wrong type, for example int to a string. Try changing your code, but dodgy input may be at fault.
+SyntaxError - You are missing something - check your brackets!
+CompileError - The compiler threw an error - try upgrading to the latest version.
+RunTimeError - Something caused by user error caused this. You may have provided bad input, or the wrong key combination.
+KeyboardInterrupt - Hardly an error. If this occurs without you pressing Ctrl+Shift+Esc, report a bug.
+Sprig
+- Sprig is Rosemary's in-house package manager. It comes bundled with Rosemary, so you don't have to install it
+- To use it, you need curl installed! It comes bundled with most systems, try to run curl to check if it is installed
+Downloading packages
+- Pick a package to install. There is a description of each at \<TBC>.\<TBC>/sprigs/\<name>
+- Then run sprig
+sprig pick <NAME OF PACKAGE>
+- This will grab 2 files from the server: a .rsmy file, and a JSON manifest file
+- To find out more about the package you just found, try running
+sprig info <NAME OF PACKAGE>
+- You now have your first sprig installed!
+Deleting packages
+- Run this command to remove your chosen package:  
+sprig cut <NAME OF PACKAGE>
+- The package should now be deleted.
+Your Packages
+Creating
+- You can fairly easily create your own package, with this command:
+- sprig build <NAME> <path/to/main.rsmy> <path/to/manifest.json> <path/to/passwd>
+- The Rosemary file is what you want your package to do, including any functions or classes you want
+- The JSON file should be in this form:
+{
+    "auths":[
+        {"name":"werdl","org":"gonerogue"},
+        {"name":"bot","org":null}
+    ],
+    "name":"example",
+    "desc":"sprig example package",
+    "version":"v0.0",
+    "dependancy":null
+}
+- Put your info in where needed
+- The passwd file is a one-line file containing the password to edit this Sprig
+- If a Sprig of this name already exists, ensure you have a unique name
+Updating and contributing
+sprig grow <NAME> <path/to/manifest.json> <path/to/main.rsmy> passwd
+- The manifest and .rsmy file is the same as above, however you also need to provide a passwd field
+- This needs to match what is in the passwd file uploaded earlier, or the command will fail to build
+- You can give this to anyone who needs to work on the file
+- By this process, you and others can contribute to the same projects
