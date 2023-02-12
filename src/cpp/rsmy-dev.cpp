@@ -454,7 +454,7 @@ while (getline (MyReadFile, myText)) {
 MyReadFile.close();
 }
     if (e2[1]=="") {
-    cout << "Enter rsmy --help for more";
+    cout << "Enter rsmy --help for more" << endl;
     while (1) {
     cout << "$~>";
     string tokens;
