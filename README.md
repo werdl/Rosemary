@@ -62,22 +62,17 @@ or an issue or whatever :)
 - TRY CATCH ❎
 - Sprig Package Manager ✅ [find it here](http://github.com/gonerogueproductions/Sprig)
 - FTP deployment ✅
-## Contributors
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-[![All Contributors](https://img.shields.io/github/all-contributors/TheRosemaryProject/Rosemary?color=ee8449&style=flat-square)](#contributors)
 ## Contribute
 - git clone this repo
 - work on rsmy-dev.cpp
 - commit your changes to rsmy.exe
 - commit
 - PR
-
 - Or make an issue
+
+
+<a href="https://github.com/TheRosemaryProject/Rosemary/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=TheRosemaryProject/Rosemary" />
+</a>
+
+<!-- Made with [contrib.rocks](https://contrib.rocks). -->
