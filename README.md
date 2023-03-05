@@ -15,6 +15,9 @@
 - .rsmy - Rosemary file
 - Error checking is pretty good right now, not
 - I'll try and fix that.
+## Latest versions
+- The latest version of the software will be compiled for Unix on amd64
+- Windows and potentially FreeBSD versions will be released with major updates
 ## Documentation
 - This can be found in the `docs` folder
 ## Installation
