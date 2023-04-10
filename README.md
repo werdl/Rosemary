@@ -63,7 +63,7 @@ or an issue or whatever :)
 - IF ELIF ELSE ❎ (I think I have a method I just need to implement it)
 - WHILE FOR FOREACH ❎
 - TRY CATCH ❎
-- Sprig Package Manager ✅ find it here in [FOLDER NAME HERE]
+- Sprig Package Manager ✅ find it in src\sprig
 - FTP deployment ✅
 ## Contribute
 - git clone this repo
