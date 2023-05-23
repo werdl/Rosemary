@@ -1,3 +1,6 @@
+## Now moved to [spartanproj/Rosemary](http://github.com/spartanproj/Rosemary)
+### New version is much better! Currently in Python, but C++ rewrite planned.
+
 <pre>
 .______        ______        _______. _______ .___  ___.      ___      .______     ____    ____ 
 |   _  \      /  __  \      /       ||   ____||   \/   |     /   \     |   _  \    \   \  /   / 
